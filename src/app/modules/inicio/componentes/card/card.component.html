@@ -1,7 +1,10 @@
 <div class="container-fluid" id="contenedorgeneral">
   <div id="texto">
-      <p>Productos Destacados</p>
+      <p id="textop">Productos Destacados</p>
   </div>
+
+
+
   <div class="row">
       <div class="card" id="contenedor" *ngFor="let i of info ">
           <div class="imagenes">
@@ -17,12 +20,12 @@
                   <p class="card-text">${{i.valor}}</p>
               </div>
               
-              <div class="botones">
+              <div class="botoness">
                   <div id="botonagregar">
                       <button class="boton" mat-stroked-button><mat-icon>shopping_cart</mat-icon>Agregar</button>
                   </div>
 
-                  <div id="botonagregardesplegable">
+                  <div id="botondesplegable">
                       <button class="boton" mat-stroked-button><mat-icon>shopping_cart</mat-icon></button>
                   </div>
               </div>

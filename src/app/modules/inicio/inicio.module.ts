@@ -4,10 +4,12 @@ import { CommonModule } from '@angular/common';
 import { InicioRoutingModule } from './inicio-routing.module';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { CardComponent } from './componentes/card/card.component';
+import { CarruselComponent } from './componentes/carrusel/carrusel.component';
 //importaciones de angular material
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { CarruselComponent } from './componentes/carrusel/carrusel.component';
+
+
 import { MatIconModule } from '@angular/material/icon';
 
 
@@ -25,7 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatCardModule,
     MatIconModule,
   ],
-  exports:[
+  exports: [
     InicioComponent,
   ]
 })

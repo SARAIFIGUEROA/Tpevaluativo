@@ -10,6 +10,7 @@
 
     #menuInicio{
         display: none;
+        background-color: rgba(245, 255, 250, 0);
     }
 
     #menuProducto{
@@ -20,10 +21,27 @@
 /* dispositivos grandes como pc */
 @media (min-width: 700px) {
     mat-toolbar{
-        background-color:#73bbff
+        background-color:#73bbff;
+        height: 80px;
     }
 
     #menuSecciones{
         display: none;
     }
+}
+
+.logo1{
+    width: 600px;
+
+}
+img{
+    width: 100px;
+   
+    display: flex;
+}
+
+button{
+    background-color: black;
+    border-radius: 10%;
+    color: white;
 }

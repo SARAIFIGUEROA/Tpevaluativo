@@ -14,55 +14,41 @@ export class CardComponent {
       {
         nombre: "Bufanda",
         valor: 6000,
-        imagen: "",
+        imagen: "./assets/campera1.jpg",
         alt: "imagen",
       },
       {
         nombre: "Bufanda",
         valor: 100,
-        imagen: "",
+        imagen: "./assets/campera2.jpg",
         alt: "imagen",
       },
       {
         nombre: "Bufanda",
         valor: 30000,
-        imagen: "",
+        imagen: "./assets/campera3.jpg",
+        alt: "imagen",
+      },
+      //antiparras
+      {
+        nombre: "Bufanda",
+        valor: 30000,
+        imagen: "./assets/antiparra1.jpg",
         alt: "imagen",
       },
       {
         nombre: "Bufanda",
         valor: 30000,
-        imagen: "",
+        imagen: "./assets/antiparra2.jpg",
         alt: "imagen",
       },
       {
         nombre: "Bufanda",
         valor: 30000,
-        imagen: "",
+        imagen: "./assets/antiparra3.jpg",
         alt: "imagen",
       },
-      {
-        nombre: "Bufanda",
-        valor: 30000,
-        imagen: "",
-        alt: "imagen",
-      },
-      {
-        nombre: "Bufanda",
-        valor: 30000,
-        imagen: "",
-        alt: "imagen",
-      }, {
-        nombre: "Bufanda",
-        valor: 30000,
-        imagen: "",
-        alt: "imagen",
-      }, {
-        nombre: "Bufanda",
-        valor: 30000,
-        imagen: "",
-        alt: "imagen",
-      }
+     
     ];
   }
 }

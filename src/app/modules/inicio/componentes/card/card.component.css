@@ -1,4 +1,4 @@
-@media (min-width: 300px) and (max-width: 700px){
+@media (min-width: 300px) and (max-width: 699px){
   #contenedor{
       height: auto;
       width: 200px;
@@ -24,8 +24,9 @@
   }
 }
 
+/*dispositivos grandes*/
 @media (min-width: 700px){
-  #botonagregardesplegable{
+  #botondesplegable{
       display: none;
   }
   #contenedor{
@@ -38,27 +39,25 @@
   }
 }
 
-/* #contenedor{
-  width: 18rem;
-} */
-.imagenes{
-  height: 200px;
-  width: 210px;
-}
+/*
 .nombres{
   height: 90px;
 }
+
 .precios{
   margin-bottom: 15px;
-}
-.botones{
-  text-align: center;
-  align-items: center;
+}*/
+
+.botoness{
+
+text-align: center;
   margin-bottom: 0px;
-  padding-bottom: 0px;
+  padding-bottom: 1px;
 }
-.boton{
-  width: 150px;
-  color:darkturquoise;
-  border: 1px solid;
+p{
+  text-align: center;
+}
+.row{
+  align-items: center;
+ display: block;
 }

@@ -1,16 +1,15 @@
 
-
-
+<div class="navbar">
 <mat-toolbar>
     <button id="menuSecciones" mat-icon-button class="example-icon" [matMenuTriggerFor]="secciones">
       <mat-icon>menu</mat-icon>
     </button>
-    <mat-menu #secciones="matMenu">
-      <button mat-menu-item routerLink="/inicio">Inicio</button>
+    <mat-menu #secciones="matMenu" class="botonesin">
+      <button routerLink="/inicio">Inicio</button>
       <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
     </mat-menu>
 
-    <span class="col"><img src="/src/assets/LOGOPP.png"></span>
+    <span class="col logo1"><img src="../assets/LOGOPP.png"></span>
     <button id="menuInicio" mat-button routerLink="/inicio">Inicio</button>
 
     <!-- Menu desplegable: SECCIÓN DE PRODUCTOS -->
@@ -38,4 +37,4 @@
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon>shopping_cart</mat-icon>
     </button>
-</mat-toolbar>
+</mat-toolbar></div>
