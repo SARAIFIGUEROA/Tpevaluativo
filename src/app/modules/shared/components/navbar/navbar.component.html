@@ -1,156 +1,41 @@
-<!--navbar-->
-<!--menu desplegable para pantalla pequeña-->
+
+
+
 <mat-toolbar>
-    <button mat-icon-button class="example-icon" id="menuSeciones" [matMenuTriggerFor]="seccion">
+    <button id="menuSecciones" mat-icon-button class="example-icon" [matMenuTriggerFor]="secciones">
       <mat-icon>menu</mat-icon>
     </button>
-<mat-menu #seccion="matMenu">
-  <!--deja de ser mat button y ahora oasa a ser un mat menu item-->
-  <button mat-menu-item routerLink="/inicio">inicio</button>
-  <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
+    <mat-menu #secciones="matMenu">
+      <button mat-menu-item routerLink="/inicio">Inicio</button>
+      <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
+    </mat-menu>
+
+    <span class="col"><img src="/src/assets/LOGOPP.png"></span>
+    <button id="menuInicio" mat-button routerLink="/inicio">Inicio</button>
+
+    <!-- Menu desplegable: SECCIÓN DE PRODUCTOS -->
+    <button id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
+   <mat-menu #producto="matMenu">
+    <button mat-menu-item routerLink="/producto">General</button>
+    <button mat-menu-item routerLink="/camperas">camperas de nieve</button>
+    <button mat-menu-item routerLink="/pantalones">pantalones de nieve</button>
+    <button mat-menu-item routerLink="/antiparras">antiparras</button>
+    <button mat-menu-item routerLink="/guantes">guantes</button>
+    <button mat-menu-item routerLink="/gorros">gorros</button>
+    <button mat-menu-item routerLink="/botas">botas</button>
 </mat-menu>
 
-    <span>My app</span>
+
     <span class="example-spacer"></span>
-    <!--se va a mostrar cuansdo la pantalla sea mayor a 700px-->
-    <button mat-button routerLink="/inicio">inicio</button>
-    <button mat-button [matMenuTriggerFor]="producto">Productos</button>
-   
-    <!--Menu desplegable productos-->
 
-<mat-menu #producto="matMenu">
-  <button mat-menu-item routerLink="/producto">General</button>
-  <button mat-menu-item routerLink="/buzos">buzos</button>
-  <button mat-menu-item routerLink="/remeras">remeras</button>
-  <button mat-menu-item routerLink=""></button>
-</mat-menu>
-
-<!--Carrito-->
-<span class="example-spacer"></span>
-<!--Inicio de sesion y registro de un nuevo usuario-->
-<button mat-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
-<mat-menu #usuario="matMenu">
-  <button mat-menu-item  routerLink="/registro">Registrarse</button>
-  <button mat-menu-item  routerLink="/iniciodesesion">Iniciar sesión</button>
-</mat-menu>
+    <!-- Inicio de sesión y formulario de registro -->
+    <button mat-icon-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
+    <mat-menu #usuario="matMenu">
+        <button mat-menu-item routerLink="/registro">Registrarse</button>
+        <button mat-menu-item routerLink="/iniciosesion">Iniciar sesión</button>
+    </mat-menu>
 
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon>shopping_cart</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
-  </mat-toolbar>
-
--
-  <mat-toolbar class="container-fluid" id="navbar" style="height: auto;">
-    <div class="col">
-        <div class="row fila1">
-
-            <div class="col logo">
-                aca Logo
-            </div>
-
-            <div class="col">
-
-                <!--buscador despligable cuando se visualize en dispositivos mobiles-->
-                <div id="buscadordesplegable">
-                  <button [matMenuTriggerFor]="buscar" mat-icon-button class="example-icon"
-                      aria-label="Example icon-button with menu icon">
-                      <mat-icon>search</mat-icon>
-                  </button>
-                  <mat-menu #buscar="matMenu">
-                      <input class="form-control me-2 inputbuscadordesplegable" type="search" placeholder="Search"
-                          aria-label="Search">
-                      <button class="btn btn-outline-success botonbuscadordesplegable"
-                          type="submit"><mat-icon>search</mat-icon></button>
-                  </mat-menu>
-              </div>
-
-              <!--buscador normal cuando se vizualize en dispositivos mas grandes-->
-              <div id="buscador">
-                  <form class="d-flex" role="search">
-                      <input class="form-control me-2 inputbuscador" type="search" placeholder="Search"
-                          aria-label="Search">
-                      <button class="btn btn-outline-success" type="submit">Search</button>
-                  </form>
-              </div>
-          </div>
-
-          <div class="col iconos">
-              <button mat-icon-button class="example-icon favorite-icon"
-                  aria-label="Example icon-button with heart icon">
-                  <mat-icon>person</mat-icon>
-              </button>
-              <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-                  <mat-icon>shopping_cart</mat-icon>
-              </button>
-          </div>
-      </div>
-
-      <div class="row fila2">
-          <div class="col botonmenu" id="menusecciones">
-              <button [matMenuTriggerFor]="producto" mat-icon-button class="example-icon"
-                  aria-label="Example icon-button with menu icon">
-                  <mat-icon>menu</mat-icon>
-              </button>
-          </div>
-          
-          <mat-menu #producto="matMenu">
-              <button mat-menu-item routerLink="/producto">
-                  <div class="col">
-                      <button mat-button routerLink="/">Ruanas</button>
-                  </div>
-              </button>
-
-              <button mat-menu-item routerLink="/bufandas">
-                  <div class="col">
-                      <button mat-button routerLink="">Bufandas nube</button>
-                  </div>
-              </button>
-
-              <button mat-menu-item routerLink="/tienda">
-                  <div class="col">
-                      <button mat-button routerLink="">Bufandas clasicas</button>
-                  </div>
-              </button>
-
-              <button mat-menu-item routerLink="/">
-                <div class="col">
-                    <button mat-button routerLink="/guantes">guantes</button>
-                </div>
-            </button>
-
-            <button mat-menu-item routerLink="/gorros">
-              <div class="col">
-                  <button mat-button routerLink="">Gorros</button>
-              </div>
-          </button>
-          </mat-menu>
-
-          <div class="col" id="menuproductos">
-              <div class="row">
-                <div class="col">
-                  <button mat-button routerLink="">Ruanas</button>
-              </div>
-              <div class="col">
-                <button mat-button routerLink="">Bufandas nube</button>
-            </div>
-                  <div class="col">
-                      <button mat-button routerLink="">Bufandas clasicas</button>
-                  </div>
-                  <div class="col">
-                      <button mat-button routerLink="">Guantes</button>
-                  </div>
-                  <div class="col">
-                      <button mat-button routerLink="">Gorros</button>
-                  </div>
-              </div>
-          </div>
-
-
-      </div>
-  </div>
-
 </mat-toolbar>
-  
