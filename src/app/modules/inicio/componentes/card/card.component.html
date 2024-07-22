@@ -1,25 +1,32 @@
+<div class="container-fluid" id="contenedorgeneral">
+  <div id="texto">
+      <p>Productos Destacados</p>
+  </div>
+  <div class="row">
+      <div class="card" id="contenedor" *ngFor="let i of info ">
+          <div class="imagenes">
+              <img id="imagen" src="{{i.imagen}}" class="card-img-top" alt="imagen">
+          </div>
 
-<div class="container">
-    <div class="row">
-      <h1>Productos</h1>
-    
-      <div class="col"> <!--info vien de lo que definimos en el ts-->
-    <div *ngFor="let i of info" class="contenido" ><mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-      </mat-card-header>
-      <img mat-card-image src="{{i.imagen}}" alt="{{i.alt}}">
-      <mat-card-content>
-        <p>
-         <mat-card-title>{{i.nombre}}</mat-card-title>
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button class="text-align-center">{{i.valor}}</button>
-        <button mat-button></button>
-      </mat-card-actions>
-    </mat-card>
-    </div>
+          <div class="card-body">
+              <div class="nombres">
+                  <h5 class="card-title">{{i.nombre}}</h5>
+              </div>
+
+              <div class="precios">
+                  <p class="card-text">${{i.valor}}</p>
+              </div>
+              
+              <div class="botones">
+                  <div id="botonagregar">
+                      <button class="boton" mat-stroked-button><mat-icon>shopping_cart</mat-icon>Agregar</button>
+                  </div>
+
+                  <div id="botonagregardesplegable">
+                      <button class="boton" mat-stroked-button><mat-icon>shopping_cart</mat-icon></button>
+                  </div>
+              </div>
+          </div>
       </div>
-    </div>
-    </div>
+  </div>
+</div>

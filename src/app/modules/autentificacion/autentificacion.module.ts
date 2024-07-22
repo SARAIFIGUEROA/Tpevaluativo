@@ -6,6 +6,14 @@ import { IniciosesionComponent } from './pages/iniciosesion/iniciosesion.compone
 import { RegistroComponent } from './pages/registro/registro.component';
 import { FormsModule } from '@angular/forms';
 
+
+//angular material 
+import { MatSelectModule, matSelectAnimations } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+
 @NgModule({
   declarations: [
     RegistroComponent,
@@ -14,12 +22,22 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AutentificacionRoutingModule,
-FormsModule
+FormsModule,
+MatSelectModule,
+MatFormFieldModule,
+MatIconModule,
+MatButtonModule,
+MatInputModule
   ],
   exports:[
     RegistroComponent,
     IniciosesionComponent,
-    FormsModule
+    FormsModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule
   ]
 })
 export class AutentificacionModule { }

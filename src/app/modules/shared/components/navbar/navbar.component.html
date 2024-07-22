@@ -41,4 +41,116 @@
       <mat-icon>share</mat-icon>
     </button>
   </mat-toolbar>
+
+-
+  <mat-toolbar class="container-fluid" id="navbar" style="height: auto;">
+    <div class="col">
+        <div class="row fila1">
+
+            <div class="col logo">
+                aca Logo
+            </div>
+
+            <div class="col">
+
+                <!--buscador despligable cuando se visualize en dispositivos mobiles-->
+                <div id="buscadordesplegable">
+                  <button [matMenuTriggerFor]="buscar" mat-icon-button class="example-icon"
+                      aria-label="Example icon-button with menu icon">
+                      <mat-icon>search</mat-icon>
+                  </button>
+                  <mat-menu #buscar="matMenu">
+                      <input class="form-control me-2 inputbuscadordesplegable" type="search" placeholder="Search"
+                          aria-label="Search">
+                      <button class="btn btn-outline-success botonbuscadordesplegable"
+                          type="submit"><mat-icon>search</mat-icon></button>
+                  </mat-menu>
+              </div>
+
+              <!--buscador normal cuando se vizualize en dispositivos mas grandes-->
+              <div id="buscador">
+                  <form class="d-flex" role="search">
+                      <input class="form-control me-2 inputbuscador" type="search" placeholder="Search"
+                          aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+              </div>
+          </div>
+
+          <div class="col iconos">
+              <button mat-icon-button class="example-icon favorite-icon"
+                  aria-label="Example icon-button with heart icon">
+                  <mat-icon>person</mat-icon>
+              </button>
+              <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                  <mat-icon>shopping_cart</mat-icon>
+              </button>
+          </div>
+      </div>
+
+      <div class="row fila2">
+          <div class="col botonmenu" id="menusecciones">
+              <button [matMenuTriggerFor]="producto" mat-icon-button class="example-icon"
+                  aria-label="Example icon-button with menu icon">
+                  <mat-icon>menu</mat-icon>
+              </button>
+          </div>
+          
+          <mat-menu #producto="matMenu">
+              <button mat-menu-item routerLink="/producto">
+                  <div class="col">
+                      <button mat-button routerLink="/">Ruanas</button>
+                  </div>
+              </button>
+
+              <button mat-menu-item routerLink="/bufandas">
+                  <div class="col">
+                      <button mat-button routerLink="">Bufandas nube</button>
+                  </div>
+              </button>
+
+              <button mat-menu-item routerLink="/tienda">
+                  <div class="col">
+                      <button mat-button routerLink="">Bufandas clasicas</button>
+                  </div>
+              </button>
+
+              <button mat-menu-item routerLink="/">
+                <div class="col">
+                    <button mat-button routerLink="/guantes">guantes</button>
+                </div>
+            </button>
+
+            <button mat-menu-item routerLink="/gorros">
+              <div class="col">
+                  <button mat-button routerLink="">Gorros</button>
+              </div>
+          </button>
+          </mat-menu>
+
+          <div class="col" id="menuproductos">
+              <div class="row">
+                <div class="col">
+                  <button mat-button routerLink="">Ruanas</button>
+              </div>
+              <div class="col">
+                <button mat-button routerLink="">Bufandas nube</button>
+            </div>
+                  <div class="col">
+                      <button mat-button routerLink="">Bufandas clasicas</button>
+                  </div>
+                  <div class="col">
+                      <button mat-button routerLink="">Guantes</button>
+                  </div>
+                  <div class="col">
+                      <button mat-button routerLink="">Gorros</button>
+                  </div>
+              </div>
+          </div>
+
+
+      </div>
+  </div>
+
+</mat-toolbar>
   

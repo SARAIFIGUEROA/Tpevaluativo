@@ -1,30 +1,64 @@
-.example-spacer {
-    flex: 1 1 auto;
+@media (min-width: 300px) and (max-width: 700px){
+  #contenedor{
+      height: auto;
+      width: 200px;
+      margin-top: 30px;
   }
-  
-  /*este mediaqueri va a corresponder a pantallas mas pequeñas como celulares, ipads*/
-  @media(min-with:300px)and (max-with:700px) {
-    mat-toolbar {
-      background-color: blue;
-    }
-  
-    #menuProducto {
-      display: none;
-    }
-  
-    #menuInicio {
-      display: none;
-    }
+  #imagen{    
+      height: auto;
+      width: 100%;
   }
-  
-  /*corresponde a pantallas mas grandes*/
-  @media(min-with:700px) {
-    mat-toolbar {
-      background-color: cadetblue;
-    }
-  
-    #menuSecciones {
-      /**/
+  #botonagregar{
       display: none;
-    }
   }
+  #contenedor{
+      width: 18rem;
+  }
+  #texto{
+      font-size: 20px;
+      align-items: center;
+      text-align: center;
+  }
+  #contenedorgeneral{
+      align-items: center;
+  }
+}
+
+@media (min-width: 700px){
+  #botonagregardesplegable{
+      display: none;
+  }
+  #contenedor{
+      width: 15rem;
+      margin: 14px;
+  }
+  #texto{
+      font-size: 20px;
+      margin-left: 15px;
+  }
+}
+
+/* #contenedor{
+  width: 18rem;
+} */
+.imagenes{
+  height: 200px;
+  width: 210px;
+}
+.nombres{
+  height: 90px;
+}
+.precios{
+  margin-bottom: 15px;
+}
+.botones{
+  text-align: center;
+  align-items: center;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+.boton{
+  width: 150px;
+  color:darkturquoise;
+  border: 1px solid;
+}

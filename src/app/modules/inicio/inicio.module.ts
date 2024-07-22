@@ -8,6 +8,7 @@ import { CardComponent } from './componentes/card/card.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { CarruselComponent } from './componentes/carrusel/carrusel.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -22,6 +23,10 @@ import { CarruselComponent } from './componentes/carrusel/carrusel.component';
     //importaciones de angular material
     MatButtonModule,
     MatCardModule,
+    MatIconModule,
+  ],
+  exports:[
+    InicioComponent,
   ]
 })
 export class InicioModule { }

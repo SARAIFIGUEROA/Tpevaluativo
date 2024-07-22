@@ -1,3 +1,5 @@
+//interfaz de productos
+
 export interface Bufanda {
     nombre: string;
     imagen: string;

@@ -1,22 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BufandasComponent } from './pages/bufandas/bufandas.component';
-import { PanuelosComponent } from './pages/panuelos/panuelos.component';
+import { PantalonesComponent} from './pages/pantalones/pantalones.component'
+import { CamperasComponent } from './pages/camperas/camperas.component'
 import { GuantesComponent } from './pages/guantes/guantes.component';
 import { GorrosComponent } from './pages/gorros/gorros.component';
-
+import { BotasComponent } from './pages/botas/botas.component';
+import { AntiparrasComponent } from './pages/antiparras/antiparras.component';
 //rutas para las categorias
 const routes: Routes = [
   {
-    path:"bufandas", component:BufandasComponent
+    path:"pantalones", component:PantalonesComponent
   },
   {
-    path:"pañuelos", component:PanuelosComponent
+    path:"camperas", component:CamperasComponent
   },
   {
     path:"guantes", component:GuantesComponent
   },
-  {path:"gorros", component:GorrosComponent}
+  {path:"gorros", component:GorrosComponent},
+  {path:"botas", component:BotasComponent},
+  {path:"antiparras", component:AntiparrasComponent},
 ];
 
 

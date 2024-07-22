@@ -3,28 +3,67 @@
   }
   
   /*este mediaqueri va a corresponder a pantallas mas pequeñas como celulares, ipads*/
-  @media(min-with:300px)and (max-with:700px) {
-    mat-toolbar {
-      background-color: blue;
+  @media (min-width: 300px) and (max-width: 700px){
+    mat-toolbar{
+        background-color: #0046BE;
     }
-  
-    #menuProducto {
-      display: none;
+
+    #menuproductos{
+        display: none;
     }
-  
-    #menuInicio {
-      display: none;
+
+    #buscador{
+        display: none;
     }
-  }
-  
+}
   /*corresponde a pantallas mas grandes*/
-  @media(min-with:700px) {
-    mat-toolbar {
-      background-color: cadetblue;
+@media (min-width: 700px){
+    mat-toolbar{
+        background-color: #0046BE;
     }
-  
-    #menuSecciones {
-      /**/
-      display: none;
+
+    #menusecciones{
+        display: none;
     }
-  }
+
+    #buscadordesplegable{
+        display: none;
+    }
+}
+
+.fila1{
+    background-color: #0046BE;
+    height: 70px;
+    align-items: center;
+}
+
+#buscadordesplegable{
+    text-align: right;
+}
+
+.inputbuscadordesplegable{
+    width: 150px;
+}
+
+.botonbuscadordesplegable{
+    width: 50px;
+}
+
+.inputbuscador{
+    width: 400px;
+}
+.iconos{
+    text-align: right;
+}
+.fila2{
+    height: 40px;
+    background-color: #013196;
+    align-items: center;
+    text-align: center;
+}
+.botonmenu{
+    text-align: left;
+}
+.col{
+    color: white;
+}
