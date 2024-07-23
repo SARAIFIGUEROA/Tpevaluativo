@@ -1,11 +1,14 @@
 .footer{
-    background-color: rgb(46, 46, 46);
+    background-color:#a0d4ff;
     padding-top: 20px;
     margin-top: 30px;
 }
 .titulos{
-        color: #0046BE;
+        color: #ffffff;
         font-size: 20px;
+    align-items: center;
+        justify-content: center;
+        display: flex;
 }
 .texto{
     color: white;
