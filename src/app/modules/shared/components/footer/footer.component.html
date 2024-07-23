@@ -1,33 +1,66 @@
 <p>footer works!</p>
-<div class="container-fluid footer" >
-    <div class="row">
-        <div class="col">
-            <h3 class="titulos">¡Contactanos!</h3>
+  <!-- Contenedor principal -->
+<div class="contenedor">
 
-            <p class="texto">Paraguay 1050, R8324 Cipolletti, <br>
-                Río Negro</p>
+    <!-- Cuadrícula con 3 columnas y una relación de altura de 4:2 -->
+    <mat-grid-list cols="3" rowHeight="4:2">
+  
+      <!-- Primer cuadrícula -->
+      <mat-grid-tile>
+        <div>
+          <h1>REDES SOCIALES</h1>
+          <p><a href="#"><img class="logos" src="./assets/facebook.png" alt="logoinstagram"></a></p>
 
-            <p class="texto">Whatsapp: +54 299 234-5678</p>
+          <p><a href="#"><img class="logos" src="./assets/logotipo-de-instagram.png" alt="logofacebook"></a></p>
 
-            <p class="texto">ejemploemail@gmail.com</p>
+          <p><a href="#"><img class="logos" src="./assets/logotiktok2.png" alt="logotiktok"></a></p>
         </div>
-        <div class="col">
-            <h3 class="titulos">Ayuda</h3>
+      </mat-grid-tile>
+   <!-- Segundo columna -->
+  
+      <mat-grid-tile>
+        <div>
+          <h1>CONTACTANOS</h1>
+      
+  <p class="underline-on-hover" routerLink="/contacto">Contacto</p>
+          <!-- Enlace a la ubicación en Google Maps con dirección -->
+          <a
+            href="https://www.google.com/maps/place/Centro+Educativo+Tecnica+N%C2%BA+30/@-38.9298409,-67.9882264,17z/data=!3m1!4b1!4m6!3m5!1s0x960a30ef2ee4b6b3:0xf60599626c221a60!8m2!3d-38.9298451!4d-67.9856515!16s%2Fg%2F11c0w09lh4?entry=ttu">
+            <p class="underline-on-hover">Paraguay 1050</p>
+          </a>
+  
+          <!-- Enlace al número de WhatsApp -->
+          <a href="https://wa.me/+5">
+            <p class="underline-on-hover">299-5862049</p>
+          </a>
+        </div>
+      </mat-grid-tile>
+      
+  <!-- 3ra columna -->
+     
+  <mat-grid-tile>
+    <div>
+      <h1>FAQ</h1>
+  
+  <p class="underline-on-hover" routerLink="/contacto">Contacto</p>
+      <!-- Enlace a la ubicación en Google Maps con dirección -->
+      <a
+        href="https://www.google.com/maps/place/Centro+Educativo+Tecnica+N%C2%BA+30/@-38.9298409,-67.9882264,17z/data=!3m1!4b1!4m6!3m5!1s0x960a30ef2ee4b6b3:0xf60599626c221a60!8m2!3d-38.9298451!4d-67.9856515!16s%2Fg%2F11c0w09lh4?entry=ttu">
+        <p class="underline-on-hover">Paraguay 1050</p>
+      </a>
+  
+      <!-- Enlace al número de WhatsApp -->
+      <a href="https://wa.me/+54">
+        <p class="underline-on-hover">54299545354435</p>
+      </a>
+
+
+      <h3 class="titulos">Ayuda</h3>
 
             <p><a class="texto" href="#">FAQ</a></p>
 
 
             <p><a class="texto" href="#">Terminos y condiciones</a></p>
         </div>
-        <div class="col">
-            <h3 class="titulos">Nuestras redes</h3>
-
-            <p><a href="#"><img class="logos" src="./assets/facebook.png" alt="logoinstagram"></a></p>
-
-            <p><a href="#"><img class="logos" src="./assets/logotipo-de-instagram.png" alt="logofacebook"></a></p>
-
-            <p><a href="#"><img class="logos" src="./assets/logotiktok2.png" alt=""></a></p>
-
-        </div>
-    </div>
-</div> 
+      <mat-grid-tile/>
+ </mat-grid-list></div>

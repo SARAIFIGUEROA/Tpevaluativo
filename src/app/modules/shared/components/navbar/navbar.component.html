@@ -1,40 +1,55 @@
-
 <div class="navbar">
-<mat-toolbar>
-    <button id="menuSecciones" mat-icon-button class="example-icon" [matMenuTriggerFor]="secciones">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #secciones="matMenu" class="botonesin">
-      <button routerLink="/inicio">Inicio</button>
-      <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
-    </mat-menu>
+  <mat-list class="mat">
+    <mat-list-item>
 
-    <span class="col logo1"><img src="../assets/LOGOPP.png"></span>
-    <button id="menuInicio" mat-button routerLink="/inicio">Inicio</button>
+      <mat-toolbar class="uno">
+        <button id="menuSecciones" mat-icon-button class="example-icon" [matMenuTriggerFor]="secciones">
+          <mat-icon>menu</mat-icon>
+        </button>
 
-    <!-- Menu desplegable: SECCIÓN DE PRODUCTOS -->
-    <button id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
-   <mat-menu #producto="matMenu">
-    <button mat-menu-item routerLink="/producto">General</button>
-    <button mat-menu-item routerLink="/camperas">camperas de nieve</button>
-    <button mat-menu-item routerLink="/pantalones">pantalones de nieve</button>
-    <button mat-menu-item routerLink="/antiparras">antiparras</button>
-    <button mat-menu-item routerLink="/guantes">guantes</button>
-    <button mat-menu-item routerLink="/gorros">gorros</button>
-    <button mat-menu-item routerLink="/botas">botas</button>
-</mat-menu>
+        <mat-menu #secciones="matMenu" class="botonesin"><a class="nav-link active text-white opacity-50"
+            aria-current="page" routerLink="/inicio">Inicio </a>
+
+          <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
+        </mat-menu>
+
+        <span class="col logo1"><img src="../assets/logosinletra.png"></span>
+
+        <div class="divh1">
+          <h1>SNOWPEAK</h1>
+        </div>
 
 
-    <span class="example-spacer"></span>
+        <!-- Menu desplegable: SECCIÓN DE PRODUCTOS -->
+        <button id="menuInicio" mat-button routerLink="/inicio">Inicio</button>
+        <button id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
+        <mat-menu #producto="matMenu">
+          <button mat-menu-item routerLink="/producto">Todos los productos</button>
+          <button mat-menu-item routerLink="/camperas">camperas de nieve</button>
+          <button mat-menu-item routerLink="/pantalones">pantalones de nieve</button>
+          <button mat-menu-item routerLink="/antiparras">antiparras</button>
+          <button mat-menu-item routerLink="/guantes">guantes</button>
+          <button mat-menu-item routerLink="/gorros">gorros</button>
+          <button mat-menu-item routerLink="/botas">botas</button>
+        </mat-menu>
 
-    <!-- Inicio de sesión y formulario de registro -->
-    <button mat-icon-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
-    <mat-menu #usuario="matMenu">
-        <button mat-menu-item routerLink="/registro">Registrarse</button>
-        <button mat-menu-item routerLink="/iniciosesion">Iniciar sesión</button>
-    </mat-menu>
+        <!--contacto  -->
+        <div class="example-button-row">
+          <button id="menuContacto" mat-button routerLink="/contacto">Contacto</button>
+        </div>
 
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>shopping_cart</mat-icon>
-    </button>
-</mat-toolbar></div>
+        <span class="example-spacer"></span>
+
+        <!-- Inicio de sesión y formulario de registro -->
+        <button mat-icon-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
+        <mat-menu #usuario="matMenu">
+          <button mat-menu-item routerLink="/registro">Registrarse</button>
+          <button mat-menu-item routerLink="/iniciosesion">Iniciar sesión</button>
+        </mat-menu>
+
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          <mat-icon>shopping_cart</mat-icon>
+        </button>
+        </mat-toolbar></mat-list-item>
+      </mat-list>
+</div>

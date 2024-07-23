@@ -1,35 +1,66 @@
 <div class="container-fluid" id="contenedorgeneral">
-  <div id="texto">
-      <p id="textop">Productos Destacados</p>
-  </div>
+    <div id="texto">
+        <p id="textop">Productos Destacados</p>
+    </div>
+
+    <!--Cards con prdocutos destacados-->
+
+    <div class="row">
+        <div class="card" id="contenedor" *ngFor="let i of info">
+            <div class="card-img">
+                <img id="imagen" src="{{i.imagen}}" class="card-img-top" alt="imagen">
+            </div>
+
+            <div class="card-body">
+                <div class="nombres">
+                    <h5 class="card-title">{{i.nombre}}</h5>
+                </div>
+
+                <div class="precios">
+                    <p class="card-text">${{i.valor}}</p>
+                </div>
+
+                <div class="botones">
+                    <div id="botonagregar">
+                        <button class="bot" mat-stroked-button><mat-icon>shopping_cart</mat-icon>Agregar</button>
+                    </div>
+
+                    <div id="botondesplegable">
+                        <button class="bot btn btn-secondary"
+                            mat-stroked-button><mat-icon>shopping_cart</mat-icon></button>
 
 
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary btn btn-secondary botonn" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Añadir al carrito
+                        </button>
 
-  <div class="row">
-      <div class="card" id="contenedor" *ngFor="let i of info ">
-          <div class="imagenes">
-              <img id="imagen" src="{{i.imagen}}" class="card-img-top" alt="imagen">
-          </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">¡ATENCIÓN!</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
 
-          <div class="card-body">
-              <div class="nombres">
-                  <h5 class="card-title">{{i.nombre}}</h5>
-              </div>
-
-              <div class="precios">
-                  <p class="card-text">${{i.valor}}</p>
-              </div>
-              
-              <div class="botoness">
-                  <div id="botonagregar">
-                      <button class="boton" mat-stroked-button><mat-icon>shopping_cart</mat-icon>Agregar</button>
-                  </div>
-
-                  <div id="botondesplegable">
-                      <button class="boton" mat-stroked-button><mat-icon>shopping_cart</mat-icon></button>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
+                                    <div class="modal-body">
+                                        Para poder agregar este artículo a su carrito debe INICIAR SESION/REGISTRARSE
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                            routerLink="/iniciosesion">Iniciar sesion</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            routerLink="/registro">Registrarse</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

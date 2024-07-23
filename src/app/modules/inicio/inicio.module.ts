@@ -8,10 +8,9 @@ import { CarruselComponent } from './componentes/carrusel/carrusel.component';
 //importaciones de angular material
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-
-
 import { MatIconModule } from '@angular/material/icon';
-
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -26,9 +25,17 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
+    MatGridListModule,
+    MatExpansionModule,
   ],
   exports: [
     InicioComponent,
+    MatButtonModule,
+    CardComponent,
+    MatCardModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatGridListModule
   ]
 })
 export class InicioModule { }

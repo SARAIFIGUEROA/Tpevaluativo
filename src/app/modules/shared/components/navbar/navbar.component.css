@@ -1,27 +1,32 @@
+
 .example-spacer {
     flex: 1 1 auto;
   }
   
   /*este mediaqueri va a corresponder a pantallas mas pequeñas como celulares, ipads*/
-  @media (min-width: 300px) and (max-width: 700px) {
+  @media (min-width: 300px) and (max-width: 699px) {
     mat-toolbar{
-        background-color:#0d43b8;
+        background-color:#1b40a7;
     }
 
     #menuInicio{
         display: none;
-        background-color: rgba(245, 255, 250, 0);
+        background-color: rgba(117, 226, 172, 0);
     }
 
     #menuProducto{
         display: none;
     }
-}
+    #menuContacto{
+        display: none;
+        
+    }}
 
 /* dispositivos grandes como pc */
+
 @media (min-width: 700px) {
     mat-toolbar{
-        background-color:#73bbff;
+        background-color:#a0d4ff;
         height: 80px;
     }
 
@@ -30,18 +35,34 @@
     }
 }
 
+/*texto del logo*/
 .logo1{
-    width: 600px;
+    width: 70px;
+   
 
 }
+/*botones de innicio y productos*/
+.divh1{ 
+    color: white;
+}
+
+/*imagen de logo*/
 img{
-    width: 100px;
+    width: 70px;
    
     display: flex;
 }
 
-button{
-    background-color: black;
-    border-radius: 10%;
-    color: white;
+.iconos{
+    text-align: right;
+}
+
+.uno{
+    height: 80px;
+}
+.mat {
+    width: 100%;
+}
+.navbar{
+    background-color:#a0d4ff;
 }

@@ -11,24 +11,7 @@ export class CardComponent {
   public info: Bufanda[];
   constructor() {
     this.info = [
-      {
-        nombre: "Bufanda",
-        valor: 6000,
-        imagen: "./assets/campera1.jpg",
-        alt: "imagen",
-      },
-      {
-        nombre: "Bufanda",
-        valor: 100,
-        imagen: "./assets/campera2.jpg",
-        alt: "imagen",
-      },
-      {
-        nombre: "Bufanda",
-        valor: 30000,
-        imagen: "./assets/campera3.jpg",
-        alt: "imagen",
-      },
+  
       //antiparras
       {
         nombre: "Bufanda",

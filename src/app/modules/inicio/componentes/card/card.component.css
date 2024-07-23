@@ -1,18 +1,25 @@
+
 @media (min-width: 300px) and (max-width: 699px){
   #contenedor{
       height: auto;
-      width: 200px;
+      width: 90px;
       margin-top: 30px;
-  }
-  #imagen{    
+  } 
+  /*ocupa el ancho de las cards*/
+  .card img{    
       height: auto;
-      width: 100%;
   }
+
+  .card{
+    width: 90px;
+  }
+
   #botonagregar{
       display: none;
   }
   #contenedor{
       width: 18rem;
+      width: 100%; 
   }
   #texto{
       font-size: 20px;
@@ -21,17 +28,17 @@
   }
   #contenedorgeneral{
       align-items: center;
+    
   }
 }
 
-/*dispositivos grandes*/
 @media (min-width: 700px){
   #botondesplegable{
       display: none;
   }
   #contenedor{
-      width: 15rem;
-      margin: 14px;
+      width: 23rem;
+      margin: 16px; 
   }
   #texto{
       font-size: 20px;
@@ -39,17 +46,25 @@
   }
 }
 
-/*
 .nombres{
-  height: 90px;
+  height:30px;
+  text-align: center;
 }
-
 .precios{
   margin-bottom: 15px;
-}*/
+  text-align: center;
+}
 
-.botoness{
-
+.row{
+  align-items: center;
+ display: flex;
+ margin-right: 6px;
+margin-left: 6px;
+margin-top: 3px;
+margin-bottom: 3px;
+justify-content: center;
+}
+.botones{
 text-align: center;
   margin-bottom: 0px;
   padding-bottom: 1px;
@@ -57,7 +72,8 @@ text-align: center;
 p{
   text-align: center;
 }
-.row{
-  align-items: center;
- display: block;
+.bot{
+  width: 150px;
+  color: #013196;
+  border: 1px solid;
 }
