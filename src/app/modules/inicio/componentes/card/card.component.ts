@@ -14,19 +14,19 @@ export class CardComponent {
   
       //antiparras
       {
-        nombre: "Bufanda",
+        nombre: "Antiparras",
         valor: 30000,
         imagen: "./assets/antiparra1.jpg",
         alt: "imagen",
       },
       {
-        nombre: "Bufanda",
+        nombre: "Antiparras",
         valor: 30000,
         imagen: "./assets/antiparra2.jpg",
         alt: "imagen",
       },
       {
-        nombre: "Bufanda",
+        nombre: "Antiparras",
         valor: 30000,
         imagen: "./assets/antiparra3.jpg",
         alt: "imagen",

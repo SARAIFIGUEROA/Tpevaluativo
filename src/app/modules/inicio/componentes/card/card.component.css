@@ -4,6 +4,7 @@
       height: auto;
       width: 90px;
       margin-top: 30px;
+      color: rgb(160, 193, 204);
   } 
   /*ocupa el ancho de las cards*/
   .card img{    
@@ -14,13 +15,17 @@
     width: 90px;
   }
 
-  #botonagregar{
+  .botonagregar{
       display: none;
+ 
   }
   #contenedor{
       width: 18rem;
       width: 100%; 
+  
   }
+  
+
   #texto{
       font-size: 20px;
       align-items: center;
@@ -28,9 +33,10 @@
   }
   #contenedorgeneral{
       align-items: center;
-    
+   
   }
 }
+
 
 @media (min-width: 700px){
   #botondesplegable{
@@ -74,6 +80,6 @@ p{
 }
 .bot{
   width: 150px;
-  color: #013196;
+  background-color: #a0d4e9;
   border: 1px solid;
 }
