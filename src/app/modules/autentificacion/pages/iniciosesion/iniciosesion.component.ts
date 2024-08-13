@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 //importaciones 
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../servicios/auth.service';
 import { FirestoreService } from 'src/app/modules/shared/firestore.service';
 import { Router } from '@angular/router';
 

@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+//modulos
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { SharedModule } from './modules/shared/shared.module';
+
 
 //importaciones de FIREBASE (herramientas de la base de datos)
 import { enviroment } from 'src/enviroment/enviroment';// vincula la bd a la app
@@ -15,8 +17,9 @@ import {AngularFireStorageModule} from '@angular/fire/compat/storage';// trabaja
 @NgModule({
   declarations: [
     AppComponent,
-  
+   
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,

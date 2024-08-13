@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 //ruteo
-import { AdminRoutingModule} from '../admin/admin-routing.module'
+import { AdminRoutingModule} from './admin-routing.module';
 //vista
 import { AdminComponent } from './pages/admin/admin.component';
 import { TableComponent } from './components/table/table.component';

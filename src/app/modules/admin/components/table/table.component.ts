@@ -2,8 +2,6 @@ import { Component, numberAttribute } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { CrudService } from '../../services/crud.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { TENANT_ID } from '@angular/fire/compat/auth';
-import { throwToolbarMixedModesError } from '@angular/material/toolbar';
 
 //sweet
 import Swal from 'sweetalert2';
@@ -16,6 +14,11 @@ import Swal from 'sweetalert2';
 export class TableComponent {
   //creamos colecvcion local de productos  -> la definimos como array
   coleccionproductos: Producto[] = [];
+
+productoSeleccionado!: Producto; // ! <- tomar valores vacios
+
+modalvisibleprodcutos: boolean = false;
+
   /*atributos alfanumericos (string) se inicializa con comilla simple
   atributos numericos (number) se iniucializan con 0 ('0')*/
 
@@ -30,11 +33,13 @@ export class TableComponent {
   })
 
   constructor(public serviciocrud: CrudService) { }
-  ngOnInit(): void {/* 
-    this.serviciocrud.obternerProducto().subscribe(producto => {
-      this.coleccionproductos= producto ;
-    })*/
+  ngOnInit(): void { 
+    // subscribe -> método de notificación de cambios (observable)
+    this.serviciocrud.obtenerProducto().subscribe(producto => {
+      this.coleccionproductos = producto;
+    })
   }
+
 
   async AgregarProducto() {
     if (this.producto.valid) {
@@ -65,4 +70,23 @@ export class TableComponent {
         });
       }
     }
+  
+
+  //vinculamos con el modal
+
+  MostrarBorrar(productoSeleccionado: Producto) {
+    this.modalvisibleprodcutos = true;
+    this.productoSeleccionado = productoSeleccionado;
   }
+
+  
+  borrarProducto(){
+    this.serviciocrud.eliminarProducto(this.productoSeleccionado.idproducto)
+    .then(respuesta => {
+      alert("Se ha podido eliminar con éxito.");
+    })
+    .catch(error => {
+      alert("Ha ocurrido un error al eliminar un producto: \n"+error);
+    })
+  }
+}
