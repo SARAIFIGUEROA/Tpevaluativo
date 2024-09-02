@@ -6,13 +6,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 //acedemos a las rutas
 import { AppRoutingModule } from 'src/app/app-routing.module';
 //angular material 
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatListModule} from '@angular/material/list';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -36,7 +36,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
-
-]
+    MatToolbarModule,
+    MatDividerModule,
+    MatGridListModule,
+    MatListModule,
+  ]
 })
 export class SharedModule { }

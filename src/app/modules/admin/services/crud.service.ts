@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { map } from 'rxjs';
-import { discardPeriodicTasks } from '@angular/core/testing';
-
 
 @Injectable({
   providedIn: 'root'
@@ -64,4 +62,4 @@ return new Promise((resolve, reject) => {
   }
 })
 }
-}
+}      
