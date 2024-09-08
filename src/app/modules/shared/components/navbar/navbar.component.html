@@ -1,55 +1,61 @@
-<div class="navbar">
-  <mat-list class="mat">
-    <mat-list-item>
+<mat-toolbar class="navbar">
+  <!-- Menú desplegable para cuando la pantalla sea menor a 700px, mas pequeña-->
+  <button id="menuSecciones" mat-icon-button class="example-icon" [matMenuTriggerFor]="seccion">
+    <mat-icon>menu</mat-icon>
+  </button>
 
-      <mat-toolbar class="uno">
-        <button id="menuSecciones" mat-icon-button class="example-icon" [matMenuTriggerFor]="secciones">
-          <mat-icon>menu</mat-icon>
-        </button>
-
-        <mat-menu #secciones="matMenu" class="botonesin"><a class="nav-link active text-white opacity-50"
-            aria-current="page" routerLink="/inicio">Inicio </a>
-
-          <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
-        </mat-menu>
-
-        <span class="col logo1" routerLink="/inicio"> <img src="../assets/logosinletra.png"></span>
-
-        <div class="divh1">
-          <h1>SNOWPEAK</h1>
-        </div>
+  <mat-menu #seccion="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
+  </mat-menu>
 
 
-        <!-- Menu desplegable: SECCIÓN DE PRODUCTOS -->
-    
-        <button id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
-        <mat-menu #producto="matMenu">
-          <button mat-menu-item routerLink="/producto">Todos los productos</button>
-          <button mat-menu-item routerLink="/camperas">camperas de nieve</button>
-          <button mat-menu-item routerLink="/pantalones">pantalones de nieve</button>
-          <button mat-menu-item routerLink="/antiparras">antiparras</button>
-          <button mat-menu-item routerLink="/guantes">guantes</button>
-          <button mat-menu-item routerLink="/gorros">gorros</button>
-          <button mat-menu-item routerLink="/botas">botas</button>
-        </mat-menu>
+  <!--Logo pantalla grande-->
 
-        <!--contacto  -->
-        <div class="example-button-row">
-          <button id="menuContacto" mat-button routerLink="/contacto">Contacto</button>
-        </div>
+  <span class="logo" routerLink="/inicio"> <img src="../../../../../assets/logosinletra.png" alt="logo"></span>
+  <span class="espacio"></span>
 
-        <span class="example-spacer"></span>
+  <h2 class="achedos" id="menuInicio" routerLink="/inicio">SNOWSPEAK</h2>
+  <!-- Se van a mostrar cuando la pantalla sea mayor a 700px -->
+  <!-- Menu desplegable pantalla grande en el centro -> PRODUCTOS -->
+  <div class="navbar-center">
+    <button id="menuProducto" mat-button [matMenuTriggerFor]="producto" class="productosgrande">PRODUCTOS</button>
+  </div>
 
-        <!-- Inicio de sesión y formulario de registro -->
-        <button mat-icon-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
-        <mat-menu #usuario="matMenu">
-          <button mat-menu-item routerLink="/registro">Registrarse</button>
-          <button mat-menu-item routerLink="/iniciosesion">Iniciar sesión</button>
-        </mat-menu>
+  <!--Lista izquierda-->
+  <mat-menu #producto="matMenu">
+    <div class="menu-container">
+      <div class="menu-list left-list">
+        <button mat-menu-item routerLink="/producto">Todos los productos</button>
+        <button mat-menu-item routerLink="/antiparras">Antiparras</button>
+        <button mat-menu-item routerLink="/camperas">Camperas de nieve</button>
+        <button mat-menu-item routerLink="/gorros">Gorros</button>
+      </div>
 
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-          <mat-icon>shopping_cart</mat-icon>
-        </button>
-        </mat-toolbar></mat-list-item>
-      </mat-list>
-</div>
+      <!--lista derecha-->
+      <div class="menu-list right-list">
+        <button mat-menu-item routerLink="/guantes">Guantes</button>
+        <button mat-menu-item routerLink="/pantalones">Pantalones de nieve</button>
+        <button mat-menu-item routerLink="/botas">Botas</button>
+      </div>
+    </div>
+  </mat-menu>
+
+  <span class="example-spacer"></span>
+
+  <!-- Menú desplegable para manejar todo el acceso de los usuarios en la página -->
+  <button mat-icon-button class="example-icon" [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
+  <mat-menu #usuario="matMenu">
+    <button mat-menu-item (click)="ingresar()" *ngIf="logueado" routerLink="/registro">Registrarse</button>
+    <button mat-menu-item (click)="ingresar()" *ngIf="logueado" routerLink="/iniciosesion">Iniciar Sesión</button>
+    <button mat-menu-item (click)="cerrarsesion()" *ngIf="deslogueado">Cerrar Sesión</button>
+  </mat-menu>
+
+  <!-- Carrito -->
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+  <!--Label Para Modo Oscuro-->
+  <label for="toggle" id="label_toggle"><i class="fa-solid fa-moon"></i></label>
+  <input type="checkbox" id="toggle" (click)="cambiarFondo()">
+
+</mat-toolbar>

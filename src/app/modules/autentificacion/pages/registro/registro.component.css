@@ -1,6 +1,6 @@
 .container{
     display: flex;
-    padding: 10px;
+    padding: 55px;
     text-align: center;
     justify-content: center;
 }
@@ -8,4 +8,9 @@
 .boton{
     width: 120px;
     margin: auto;
+}
+
+h1{
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 36px;
 }

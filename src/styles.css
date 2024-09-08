@@ -1,7 +1,42 @@
+/*estilos para modo oscuro*/
+
+body{
+    transition: all 1.5s ease;
+}
+
+/*id para el checkout*/
+#toggle{
+    /*la chack aparecen invisible*/
+    display: none;
+}
+
+#label_toggle{
+    position: static;
+    /**/
+    cursor: pointer;
+}
+
+/*creacion de modo oscuro*/
+.dark{
+    background-color: rgb(20, 20, 20) ;
+    /*color blanco para que cuando el fondo se ponga negro las letras se vuelvan blancas*/
+    color: white;
+}
+
+*{
+    color: black;
+}
+
+
 /* You can add global styles to this file, and also import other style files */
+/* Aplicar Google Fonts globalmente, excepto para los íconos de Angular Material */
+body {
+    font-family: 'Roboto', 'Helvetica Neue', sans-serif; /* Fuente principal para el texto */
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Asegúrate de que los íconos de Angular Material usen la fuente correcta */
+mat-icon {
+    font-family: 'Material Icons', sans-serif; /* Fuente específica para los íconos */
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Otras reglas globales */

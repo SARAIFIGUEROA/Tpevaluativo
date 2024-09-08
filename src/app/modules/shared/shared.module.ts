@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 //angular material 
 import { MatIconModule } from '@angular/material/icon';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
@@ -28,7 +29,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatDividerModule,
     MatGridListModule,
     MatListModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    MatButtonModule,
   ],
   exports: [
     FooterComponent,
@@ -40,6 +43,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatDividerModule,
     MatGridListModule,
     MatListModule,
+
   ]
 })
 export class SharedModule { }

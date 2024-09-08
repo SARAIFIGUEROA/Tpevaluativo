@@ -1,20 +1,30 @@
-.footer{
-    background-color:#a0d4ff;
-    padding-top: 20px;
-    margin-top: 30px;
-}
-.titulos{
-        color: #ffffff;
-        font-size: 20px;
-    align-items: center;
-        justify-content: center;
-        display: flex;
-}
-.texto{
+.footer {
+    background-color: #547392;
+  }
+  
+  .footer h5 {
+    margin-bottom: 1rem;
+  }
+  
+  .footer a {
+    text-decoration: none;
     color: white;
-    font-size: 15px;
-}
-.logos{
-    height: 30px;
-    width: auto;
-}
+    transition: color 0.3s ease;
+  }
+  
+  .footer a:hover {
+    color: #111111;
+    cursor: pointer;
+  }
+  
+  .footer i {
+    margin-right: 8px;
+  }
+  
+  h3{
+    color: white;
+  }
+
+  li{
+    color: #547392;
+  }

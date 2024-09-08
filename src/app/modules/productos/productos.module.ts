@@ -9,6 +9,10 @@ import { GorrosComponent } from './pages/gorros/gorros.component';
 import { GuantesComponent } from './pages/guantes/guantes.component';
 import { BotasComponent } from './pages/botas/botas.component';
 import { AntiparrasComponent } from './pages/antiparras/antiparras.component';
+//cards
+import { CardComponent } from './components/card/card.component';
+import { CardAntiparrasComponent} from './components/card-antiparras/card-antiparras.component';
+import { ProductoComponent } from './pages/producto/producto.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +21,24 @@ import { AntiparrasComponent } from './pages/antiparras/antiparras.component';
     GorrosComponent,
     GuantesComponent,
     AntiparrasComponent,
-    BotasComponent
+    BotasComponent,
+    CardComponent,
+    CardAntiparrasComponent,
+    ProductoComponent
   ],
   imports: [
     CommonModule,
     ProductosRoutingModule
+  ],
+  exports:[
+    CamperasComponent,
+    PantalonesComponent,
+    GorrosComponent,
+    GuantesComponent,
+    AntiparrasComponent,
+    BotasComponent,
+    CardComponent,
+    CardAntiparrasComponent,
   ]
 })
 export class ProductosModule { }

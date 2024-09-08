@@ -1,11 +1,15 @@
 .container{
     display: flex;
-    padding: 10px;
+    padding: 70px;
     text-align: center;
     justify-content: center;
 }
 
 .boton{
-    width: 120px;
+    width: 160px;
     margin: auto;
+}
+h1{
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 36px;
 }
