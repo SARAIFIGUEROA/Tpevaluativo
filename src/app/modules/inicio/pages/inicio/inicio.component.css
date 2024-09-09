@@ -1,0 +1,22 @@
+.boton{
+    color: rgb(156, 97, 97);
+    background-color: #1fb6f1;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: light;
+}
+
+.booton{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.botonn{
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}

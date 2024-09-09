@@ -1,3 +1,5 @@
+
+/*Clases para el contenedor principal*/
 .Carrusel{
     margin-left: 100px;
     margin-right: 100px;
@@ -21,11 +23,34 @@
 
 }
 
-/*pantallas grandes */
+/*pantallas grandes*/
 @media(min-width:700px) {
 #Carrusel2{
     display: none;
 }
 
-}
+} 
+/*clases para el div dentro del carrusel*/
 
+.carousel-caption a.btn {
+    font-size: 18px; /* Ajusta el tamaño del texto del botón */
+    padding: 10px 20px; /* Ajusta el tamaño del botón */
+  }
+  
+  .carousel-caption {
+    bottom: 20%; /* Cambia la posición del texto y el botón */
+  }
+
+/*boton de carrusel img2*/
+  .custom-caption{
+    bottom: 0px; /* Posición en la parte inferior*/
+    left: 50%; /* Posición horizontal al 50% */
+    transform: translateX(-50%); /* Centra el contenido horizontalmente */
+  }
+  
+
+
+
+  .carousel-item {
+      position: relative;} 
+      /* Necesario para que el caption esté posicionado correctamente dentro de cada slide*/

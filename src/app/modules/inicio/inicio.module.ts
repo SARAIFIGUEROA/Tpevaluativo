@@ -5,18 +5,23 @@ import { InicioRoutingModule } from './inicio-routing.module';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { CardComponent } from './componentes/card/card.component';
 import { CarruselComponent } from './componentes/carrusel/carrusel.component';
+import { CategoriashomeComponent } from './componentes/categoriashome/categoriashome.component';
 //importaciones de angular material
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatExpansionModule } from '@angular/material/expansion';
+
+
 
 @NgModule({
   declarations: [
     InicioComponent,
     CardComponent,
-    CarruselComponent
+    CarruselComponent,
+    CategoriashomeComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -30,12 +35,14 @@ import {MatExpansionModule} from '@angular/material/expansion';
   ],
   exports: [
     InicioComponent,
-    MatButtonModule,
     CardComponent,
+    CategoriashomeComponent,
+    MatButtonModule,
     MatCardModule,
     MatExpansionModule,
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+
   ]
 })
 export class InicioModule { }

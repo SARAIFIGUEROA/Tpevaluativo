@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-
+import { SobrenosotrosComponent } from '../sobrenosotros/pages/sobrenosotros/sobrenosotros.component';
 //acedemos a las rutas
 import { AppRoutingModule } from 'src/app/app-routing.module';
 //angular material 
@@ -14,6 +14,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { SobrenosotrosModule } from '../sobrenosotros/sobrenosotros.module';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     NavbarComponent,
   ],
   imports: [
+    SobrenosotrosModule, //modulo que contiene el sobrenosotros.component
     CommonModule,
     MatIconModule,
     MatToolbarModule,
@@ -30,12 +32,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatGridListModule,
     MatListModule,
     AppRoutingModule,
-
     MatButtonModule,
+    
   ],
   exports: [
     FooterComponent,
     NavbarComponent,
+
     MatIconModule,
     MatButtonModule,
     MatMenuModule,

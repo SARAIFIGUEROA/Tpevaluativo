@@ -1,3 +1,21 @@
+#textop{
+margin: 28px;
+font-family: "Roboto Condensed", sans-serif;
+    font-size: 26px;
+}
+
+.card {
+  width: 100%; /* Ajusta el ancho de la tarjeta */
+  max-width: 350px; /* Limita el ancho máximo */
+
+
+}
+
+.card-img-top {
+  height: 200px; /* Ajusta la altura de la imagen */
+  object-fit: cover; /* Para que la imagen no se deforme */ 
+}
+
 
 @media (min-width: 300px) and (max-width: 699px){
   #contenedor{
@@ -72,13 +90,14 @@ margin-top: 3px;
 margin-bottom: 3px;
 justify-content: center;
 }
+
 .botones{
 text-align: center;
   margin-bottom: 0px;
   padding-bottom: 1px;
 }
 p{
-  text-align: center;
+  text-align: center; 
 }
 .bot{
   width: 150px;

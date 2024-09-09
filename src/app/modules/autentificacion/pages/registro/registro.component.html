@@ -8,7 +8,7 @@
         <mat-form-field appearance="fill">
             <mat-label>Ingrese nombre de usuario</mat-label>
             <!--ngmodel=> directiva utilizada para formularios-->
-            <input [(ngModel)]="usuarios.nombre" matInput placeholder="Ej: Pepe">
+            <input [(ngModel)]="usuarios.nombre" matInput placeholder="Ej: Pepe"required>
             
             
         </mat-form-field>
@@ -16,14 +16,14 @@
         <!--Apellido-->
         <mat-form-field appearance="fill">
             <mat-label>Ingrese su apellido</mat-label>
-            <input [(ngModel)]="usuarios.apellido" matInput placeholder="Ej: perez">
+            <input [(ngModel)]="usuarios.apellido" matInput placeholder="Ej: perez" required>
             
             
         </mat-form-field>
 <!--Email del usuario-->
         <mat-form-field appearance="fill">
             <mat-label>Ingrese Email</mat-label>
-            <input [(ngModel)]="usuarios.email" matInput placeholder="Ej: Pepe@gmail.com">
+            <input [(ngModel)]="usuarios.email" matInput placeholder="Ej: Pepe@gmail.com" required>
             
             
         </mat-form-field>
@@ -34,6 +34,7 @@
             <select matNativeControl required>
               <option value="admin">Administrador</option>
               <option value="vist">Visitante</option>
+              <option value="cliente">Cliente</option>
             </select>
           </mat-form-field>
 
