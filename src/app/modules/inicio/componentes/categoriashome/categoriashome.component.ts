@@ -21,12 +21,12 @@ export class CategoriashomeComponent {
       },
       {
         id: "",
-        router: "botas",
+        router: "pantalones",
         categoria: "categoria2.jpeg"
 
       }, {
         id: "",
-        router: "pantalones",
+        router: "botas",
         categoria: "categoria3.jpeg"
 
       },
