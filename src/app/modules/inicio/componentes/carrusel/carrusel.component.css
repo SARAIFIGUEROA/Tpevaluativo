@@ -1,56 +1,94 @@
-
 /*Clases para el contenedor principal*/
-.Carrusel{
-    margin-left: 100px;
-    margin-right: 100px;
+.Carrusel {
+  margin-left: 100px;
+  margin-right: 100px;
 }
-.Carrusel2{
-    margin-top: 10px;
+
+.Carrusel2 {
+  margin-top: 10px;
 }
 
 .carousel-item img {
-    width: 100%;
-    height:100%;
+  width: 100%;
+  height: 100%;
 }
 
 
 
 /*pantallas chicas*/
 @media(min-width: 300px) and (max-width: 699px) {
-    #Carrusel{
-        display: none;
-    }
+  #Carrusel {
+    display: none;
+  }
 
 }
 
 /*pantallas grandes*/
 @media(min-width:700px) {
-#Carrusel2{
+  #Carrusel2 {
     display: none;
+  }
+
 }
 
-} 
 /*clases para el div dentro del carrusel*/
 
 .carousel-caption a.btn {
-    font-size: 18px; /* Ajusta el tamaño del texto del botón */
-    padding: 10px 20px; /* Ajusta el tamaño del botón */
-  }
-  
-  .carousel-caption {
-    bottom: 20%; /* Cambia la posición del texto y el botón */
-  }
+  font-size: 18px;
+  /* Ajusta el tamaño del texto del botón */
+  padding: 10px 20px;
+  /* Ajusta el tamaño del botón */
+}
+
+.carousel-caption {
+  bottom: 20%;
+  /* Cambia la posición del texto y el botón */
+}
 
 /*boton de carrusel img2*/
-  .custom-caption{
-    bottom: 0px; /* Posición en la parte inferior*/
-    left: 50%; /* Posición horizontal al 50% */
-    transform: translateX(-50%); /* Centra el contenido horizontalmente */
+.custom-caption {
+  bottom: 0px;
+  /* Posición en la parte inferior*/
+  left: 50%;
+  /* Posición horizontal al 50% */
+  transform: translateX(-50%);
+  /* Centra el contenido horizontalmente */
+}
+
+.carousel-item {
+  position: relative;
+}
+
+/* Necesario para que el caption esté posicionado correctamente dentro de cada slide*/
+
+
+/*barra de annuncio con movimiento*/
+
+.barra-anuncio {
+  height: 3%;
+  width: 100%;
+  background: linear-gradient(85deg, rgb(98, 0, 255),rgb(38, 0, 255), rgb(0, 81, 255), rgb(113, 198, 255) );
+  text-align: center;
+  /*position: fixed;   esto es para que algo quede fijo en lña paagina*/
+  top: 11%;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.texto-movimiento {
+  display: inline-block;
+  white-space: nowrap;
+  animation: moverTexto 7s linear infinite;
+  color: azure;
+  align-items: center;
+}
+
+@keyframes moverTexto {
+  0% {
+    transform: translateX(100%);
   }
-  
 
-
-
-  .carousel-item {
-      position: relative;} 
-      /* Necesario para que el caption esté posicionado correctamente dentro de cada slide*/
+  100% {
+    transform: translateX(-100%);
+  }
+}

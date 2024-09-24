@@ -101,6 +101,11 @@ p{
 }
 .bot{
   width: 150px;
-  background-color: #a0d4e9;
-  border: 1px solid;
+  background-color: #669beb;
+ 
 }
+.bot:hover {
+  background-color:  #3761a0c9; /* Color de fondo en hover */
+  transform: scale(1.05); /* Agranda el botón en hover */
+  border-color: black;
+  }

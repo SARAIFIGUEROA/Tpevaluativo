@@ -1,4 +1,4 @@
-img{
+img {
     width: 350px;
     height: 350px;
 }
@@ -16,25 +16,31 @@ img{
 
 .image-container:hover img {
     transform: scale(1.1);
-    filter: brightness(0.7); /*baja el brillo a la img*/
+    filter: brightness(0.7);
+    /*baja el brillo a la img*/
 }
 
 
-.contenido{
-
-   
+.contenido {
     padding: 10px;
 
 }
 
-.container{
-    display:flex ;
+.container {
+    display: flex;
     justify-content: center;
+}
+
+h1 {
+    align-items: center;
+    text-align: center;
+    font-family: "Roboto Condensed", sans-serif;
 }
 
 /* no se muestran las cards con categorias en pantalla chicas*/
 @media (min-width: 300px) and (max-width: 700px) {
+
     #categorias {
-      display: none;
+        display: none;
     }
-  }
+}

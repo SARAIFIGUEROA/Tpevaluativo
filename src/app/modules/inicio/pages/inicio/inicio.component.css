@@ -1,4 +1,4 @@
-.boton{
+.boton {
     color: rgb(156, 97, 97);
     background-color: #1fb6f1;
     font-family: "Roboto Condensed", sans-serif;
@@ -7,12 +7,13 @@
     font-style: light;
 }
 
-.booton{
+.booton {
     text-align: center;
     justify-content: center;
     align-items: center;
 }
-.botonn{
+
+.botonn {
     justify-content: center;
     align-items: center;
     font-family: "Roboto Condensed", sans-serif;
@@ -21,10 +22,18 @@
     font-style: normal;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
 /* CORRESPONDEN A PANTALLAS MÁS PEQUEÑAS -> ej.: celulares */
 @media (min-width: 700px) {
-  
+
     app-buscador {
-      display: none;
+        display: none;
     }
-  }
+}

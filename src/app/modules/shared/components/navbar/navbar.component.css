@@ -8,9 +8,12 @@
   align-items: center;
   justify-content: space-between;
   /* Distribuye el espacio entre los elementos */
-  padding: 0 16px; /* Espacio interno*/
-  position: relative; /*posicionamiento de los elementos internos */
-height: 76px;
+  padding: 0 16px;
+  /* Espacio interno*/
+  position: relative;
+  /*posicionamiento de los elementos internos */
+  height: 76px;
+
 }
 
 /* Contenedor para centrar el botón */
@@ -45,9 +48,8 @@ height: 76px;
 /* CORRESPONDEN A PANTALLAS MÁS PEQUEÑAS -> ej.: celulares */
 @media (min-width: 300px) and (max-width: 700px) {
   mat-toolbar {
-    background-color: rgb(97, 130, 173);
+    background-color: #9ccfec;
   }
-
   #menuProducto {
     display: none;
   }
@@ -68,24 +70,29 @@ height: 76px;
 
 /* Contenedor del menú */
 .menu-container {
-  display: flex; /* Usa flexbox para el diseño */
-  justify-content: space-between; /* Distribuye el espacio entre las listas */
-  padding: 8px; /* Añade espacio interior alrededor de la lista */
+  display: flex;
+  /* Usa flexbox para el diseño */
+  justify-content: space-between;
+  /* Distribuye el espacio entre las listas */
+  padding: 8px;
+  /* Añade espacio interior alrededor de la lista */
   width: 50%;
- } 
- 
+}
+
 /* Estilos para cada lista de productos */
 .menu-list {
   display: flex;
-  flex-direction: column;/* Coloca los productos en una columna */
-  
+  flex-direction: column;
+  /* Coloca los productos en una columna */
+
 }
 
 .menu-list button:hover {
-  margin-bottom: 10px;/* Espaciado entre los botones */
+  margin-bottom: 10px;
+  /* Espaciado entre los botones */
   cursor: pointer;
-  background-color: rgba(190, 213, 240, 0.712);/* Fondo azul al pasar el cursor */
+  background-color: rgba(190, 213, 240, 0.712);
+  /* Fondo azul al pasar el cursor */
   border-radius: 5px;
 
 }
-

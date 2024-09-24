@@ -3,7 +3,6 @@
   <button id="menuSecciones" mat-icon-button class="example-icon" [matMenuTriggerFor]="seccion">
     <mat-icon>menu</mat-icon>
   </button>
-
   <mat-menu #seccion="matMenu">
     <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
   </mat-menu>
@@ -53,13 +52,14 @@
 </div>
 <span></span>-->
 <span class="example-spacer"></span>
+<!--Buscador que no se si poner o no
+<app-buscador class="pantallagrande"></app-buscador>-->
 
 
-
-<app-buscador class="pantallagrande"></app-buscador>
-
-
-
+  <!-- Carrito -->
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
   <!-- registro e inicio de sesion -->
    
   <button mat-icon-button class="example-icon" [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
@@ -68,19 +68,23 @@
     <button mat-menu-item (click)="ingresar()" *ngIf="logueado" routerLink="/iniciosesion">Iniciar Sesión</button>
     <button mat-menu-item (click)="cerrarsesion()" *ngIf="deslogueado">Cerrar Sesión</button>
   </mat-menu>
-  
 
-  <!-- Carrito -->
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>shopping_cart</mat-icon>
+  <!--Menu para el resto de las secciones-->
+  <button id="menuSecciones2" mat-icon-button class="example-icon" [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
   </button>
-  <!--Icono de info(about us)-->
-  <button mat-icon-button class="example-icon" routerLink="/sobrenosotros"><mat-icon>info</mat-icon></button>
-
-
-  <!--Label Para Modo Oscuro-->
-  <label for="toggle" id="label_toggle"><i class="fa-solid fa-moon"></i></label>
-  <input type="checkbox" id="toggle" (click)="cambiarFondo()">
-
   
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item  routerLink="/contacto">Contacto</button>
+    <button mat-menu-item routerLink="/guiadetalles">Guía de Talles</button>
+    <button mat-menu-item routerLink="/sobrenosotros">Sobre Nosotros</button>
+  </mat-menu>
+
+  <!--Icono de info(about us)
+  <button mat-icon-button class="example-icon" routerLink="/sobrenosotros"><mat-icon>info</mat-icon></button>-->
+
+
+  <!--Label Para Modo Oscuro
+  <label for="toggle" id="label_toggle"><i class="fa-solid fa-moon"></i></label>
+  <input type="checkbox" id="toggle" (click)="cambiarFondo()">-->
 </mat-toolbar>

@@ -31,6 +31,7 @@ import { BuscadorComponent } from './pages/buscador/buscador.component';
     SobrenosotrosModule, //modulo que contiene el sobrenosotros.component
     CommonModule,
     MatIconModule,
+
     MatToolbarModule,
     MatMenuModule,
     MatListModule,
