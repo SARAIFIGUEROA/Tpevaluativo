@@ -1,5 +1,5 @@
 <!--tabla bd-->
-<table class="table">
+<table class="table tabla1">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -8,8 +8,8 @@
       <th scope="col">Precio</th>
       <th scope="col">Descripcion</th>
       <th scope="col">Categoria</th>
-      <th scope="col">Acciones</th>
-      <th scope="col">Acciones</th> 
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th> 
     </tr>
   </thead>
 
@@ -28,14 +28,14 @@
       <!--acciones-->
       <td>
         <button id="btn edit" title="Editar" type="button" class="btn btn-outlinr-warning" data-bs-toggle="modal" data-bs-target="#EditarProducto" (click)="Mostrareditar(producto)">
-          <mat-icon>edit</mat-icon>
+          <mat-icon class="iconos">edit</mat-icon>
         </button>
       </td>
 
       <td>
         <button id="btn-delete" title="Eliminar" type="button" class="btn btn-outlinr-danger" data-bs-toggle="modal"
           data-bs-target="#eliminarProducto" (click)="MostrarBorrar(producto)">
-          <mat-icon>delete</mat-icon>
+          <mat-icon class="iconos1">delete</mat-icon>
         </button>
       </td>
     </tr>
@@ -43,7 +43,7 @@
 </table>
 
 <!-- Boton agregar nuevos productos -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#AgregarProducto">
+<button type="button" class="btn btn botonAgr" data-bs-toggle="modal" data-bs-target="#AgregarProducto" >
   Agregar nuevo producto
 </button>
 
@@ -68,10 +68,10 @@
         </div>
         <!--imagen-->
         <div class="mb-3">
-          <label class="form-label">Suba url de imagen
-            <input class="form-label" type="text" formControlName="imagen"
+          <label class="form-label">Suba url de imagen  </label>
+            <input type="file" accept="imagen/*" (change)="cargarImg($event)"
               placeholder="adjunte el link de la imagen aqui">
-          </label>
+        
         </div>
 
         <div class="mb-3">
@@ -137,10 +137,9 @@
         </div>
         <!--imagen-->
         <div class="mb-3">
-          <label class="form-label">Suba url de imagen
-            <input class="form-label" type="text" formControlName="imagen"
-              placeholder="{{productoEdit.imagen}}">
-          </label>
+          <label class="form-label">Suba url de imagen</label>
+            <input type="file" accept="imagen/*" (change)="cargarImg($event)">
+          
         </div>
 
         <div class="mb-3">
@@ -168,9 +167,12 @@
             <select class="form-label" type="text" formControlName="categoria" placeholder="Ej: ...">
               <option selected>elija una opción</option>
               <!--ACA SE PONEN LAS CATEGORIAS QUE HAY EN EL MODULO PRODUTCO-->
-              <option value="remeras">Remeras</option>
-              <option value="buzos">Buzos</option>
-              <option value="producto">General</option>
+              <option value="camperas">Camperas</option>
+              <option value="pantalones">Pantalones</option>
+              <option value="botas">Botas</option>
+              <option value="antiparras">Antiparras</option>
+              <option value="guantes">Guantes</option>
+              <option value="gorros">Gorros</option>
             </select>
           </label>
         </div>
@@ -184,8 +186,6 @@
     </div>
   </div>
 </div>
-
-
 
 
 <!-- Modal NUEVO para eliminar productos-->

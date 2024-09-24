@@ -26,16 +26,26 @@ img {
 
 }
 
+<<<<<<< HEAD
 .container {
     display: flex;
+=======
+.container{
+    display:flex;
+>>>>>>> 7795d45bf607ee4a9fdc80d108d854eabd326f55
     justify-content: center;
+    align-items: center;
+ padding: auto;
 }
 
+<<<<<<< HEAD
 h1 {
     align-items: center;
     text-align: center;
     font-family: "Roboto Condensed", sans-serif;
 }
+=======
+>>>>>>> 7795d45bf607ee4a9fdc80d108d854eabd326f55
 
 /* no se muestran las cards con categorias en pantalla chicas*/
 @media (min-width: 300px) and (max-width: 700px) {

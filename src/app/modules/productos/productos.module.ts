@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ProductosRoutingModule } from './productos-routing.module';
+import { AdminModule } from '../admin/admin.module';
+
 //componentes de productos
 import { CamperasComponent } from './pages/camperas/camperas.component';
 import { PantalonesComponent } from './pages/pantalones/pantalones.component';
@@ -28,7 +30,8 @@ import { ProductoComponent } from './pages/producto/producto.component';
   ],
   imports: [
     CommonModule,
-    ProductosRoutingModule
+    ProductosRoutingModule,
+    AdminModule,
   ],
   exports:[
     CamperasComponent,

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .boton {
     color: rgb(156, 97, 97);
     background-color: #1fb6f1;
@@ -19,9 +20,27 @@
     font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
+=======
+.boton{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #6199b0;
+  
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+>>>>>>> 7795d45bf607ee4a9fdc80d108d854eabd326f55
     font-style: normal;
 }
+  
+.booton{
+    justify-content: center;
+    align-items: center;
+display: flex;
+}
 
+<<<<<<< HEAD
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -31,9 +50,20 @@ body {
 
 
 /* CORRESPONDEN A PANTALLAS MÁS PEQUEÑAS -> ej.: celulares */
+=======
+.boton2{
+    background-color: #38718b; 
+}
+
+/* CORRESPONDEN A PANTALLAS MÁS PEQUEÑAS */
+>>>>>>> 7795d45bf607ee4a9fdc80d108d854eabd326f55
 @media (min-width: 700px) {
 
     app-buscador {
+<<<<<<< HEAD
         display: none;
+=======
+      display: none; 
+>>>>>>> 7795d45bf607ee4a9fdc80d108d854eabd326f55
     }
 }
