@@ -1,6 +1,7 @@
 .tabla1{
     background-color: rgb(146, 185, 208); /* Color de fondo */
   color: #ffffff; /* Color del texto */
+  border-radius: 3% ;
 }
 
 .tabla1 th {
@@ -10,6 +11,7 @@
 
 .tabla1 td {
   background-color: rgb(91, 124, 158);  /* Color de fondo para las celdas */
+  
 }
 
 .iconos{
@@ -22,4 +24,9 @@ color:  #ffffff;
 .botonAgr{
    background-color: rgb(53, 105, 154);
    color: white
+  
+}
+
+img{
+  border-radius: 3%;
 }

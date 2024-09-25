@@ -14,14 +14,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatExpansionModule } from '@angular/material/expansion';
 
 
-
 @NgModule({
   declarations: [
     InicioComponent,
     CardComponent,
     CarruselComponent,
     CategoriashomeComponent,
-    
+
   ],
   imports: [
     CommonModule,

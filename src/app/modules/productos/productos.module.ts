@@ -15,6 +15,11 @@ import { AntiparrasComponent } from './pages/antiparras/antiparras.component';
 import { CardComponent } from './components/card/card.component';
 import { CardAntiparrasComponent} from './components/card-antiparras/card-antiparras.component';
 import { ProductoComponent } from './pages/producto/producto.component';
+import { CardCamperasComponent } from './components/card-camperas/card-camperas.component';
+import { CardPantalonesComponent } from './components/card-pantalones/card-pantalones.component';
+import { CardBotasComponent } from './components/card-botas/card-botas.component';
+import { CardGuantesComponent } from './components/card-guantes/card-guantes.component';
+import { CardGorrosComponent } from './components/card-gorros/card-gorros.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { ProductoComponent } from './pages/producto/producto.component';
     BotasComponent,
     CardComponent,
     CardAntiparrasComponent,
-    ProductoComponent
+    ProductoComponent,
+    CardCamperasComponent,
+    CardPantalonesComponent,
+    CardBotasComponent,
+    CardGuantesComponent,
+    CardGorrosComponent
   ],
   imports: [
     CommonModule,

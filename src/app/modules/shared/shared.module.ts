@@ -16,9 +16,10 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-
-import { SobrenosotrosModule } from '../sobrenosotros/sobrenosotros.module';
 import { BuscadorComponent } from './pages/buscador/buscador.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { SobrenosotrosComponent } from './pages/sobrenosotros/sobrenosotros.component';
+import { GuiatallesComponent } from './pages/guiatalles/guiatalles.component';
 
 
 @NgModule({
@@ -26,9 +27,12 @@ import { BuscadorComponent } from './pages/buscador/buscador.component';
     FooterComponent,
     NavbarComponent,
     BuscadorComponent,
+    ContactComponent,
+    SobrenosotrosComponent,
+    GuiatallesComponent,
   ],
   imports: [
-    SobrenosotrosModule, //modulo que contiene el sobrenosotros.component
+ //modulo que contiene el sobrenosotros.component
     CommonModule,
     MatIconModule,
 
