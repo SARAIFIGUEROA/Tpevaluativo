@@ -5,6 +5,9 @@
   </button>
   <mat-menu #seccion="matMenu">
     <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
+    <button mat-menu-item  routerLink="/contacto">Contacto</button>
+    <button mat-menu-item routerLink="/guiadetalles">Guía de Talles</button>
+    <button mat-menu-item routerLink="/sobrenosotros">Sobre Nosotros</button>
   </mat-menu>
 
 
@@ -19,6 +22,7 @@
   <!-- Menu desplegable pantalla grande en el centro -> PRODUCTOS -->
   <div class="navbar-center">
     <button id="menuProducto" mat-button [matMenuTriggerFor]="producto" class="productosgrande">PRODUCTOS</button>
+ 
   </div>
 
   <!--Lista izquierda-->

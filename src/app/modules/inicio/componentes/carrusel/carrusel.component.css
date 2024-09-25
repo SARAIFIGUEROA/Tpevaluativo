@@ -92,3 +92,29 @@
     transform: translateX(-100%);
   }
 }
+
+.btn1{
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.123);
+  color: white;
+  width: 20%;
+}
+.btn1:hover {
+  transform: scale(1.1); /* Agrandar un 10% */
+  box-shadow: 0px 6px 17px rgba(43, 117, 255, 0.76); /* Sombra */
+}
+
+.btn3{
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.63);
+  color: rgb(13, 86, 128);
+  width: 20%;
+}
+.btn3:hover {
+  transform: scale(1.1); /* Agrandar un 10% */
+  box-shadow: 0px 6px 17px rgba(43, 117, 255, 0.76); /* Sombra */
+}
