@@ -1,0 +1,23 @@
+ /* Estilos personalizados */
+ .contact-section {
+  background-color: #e6f2f8;
+    padding: 50px 20px;
+  }
+
+  .contact-section h2 {
+    color: #0e3a5d;
+  }
+
+  .contact-info p {
+    color: #555;
+  }
+
+  .btn-snowpeak {
+    background-color:  #547392;
+    color: #fff;
+    transition: background-color 0.3s;
+  }
+
+  .btn-snowpeak:hover {
+    background-color:  #9ccfec;
+  }

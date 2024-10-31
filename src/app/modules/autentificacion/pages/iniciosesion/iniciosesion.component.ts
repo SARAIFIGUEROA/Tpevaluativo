@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 //importaciones 
 import { AuthService } from '../../servicios/auth.service';
-import { FirestoreService } from 'src/app/modules/shared/firestore.service';
+import { FirestoreService } from 'src/app/modules/shared/services/firestore.service';
 import { Router } from '@angular/router';
 
 //crypto

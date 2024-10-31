@@ -3,7 +3,7 @@ import { Usuario } from 'src/app/models/usuario';
 //importamos servicio de autentificacion
 import { AuthService } from '../../servicios/auth.service';
 //importamos servicios de firestore
-import { FirestoreService } from 'src/app/modules/shared/firestore.service';
+import { FirestoreService } from 'src/app/modules/shared/services/firestore.service';
 //importamos componentes de rutas de angular
 import { Router } from '@angular/router';
 import { throwToolbarMixedModesError } from '@angular/material/toolbar';
