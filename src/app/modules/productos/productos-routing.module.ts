@@ -9,9 +9,13 @@ import { AntiparrasComponent } from './pages/antiparras/antiparras.component';
 import { ContactComponent } from '../shared/pages/contact/contact.component';
 import { GuiatallesComponent } from '../shared/pages/guiatalles/guiatalles.component';
 import { SobrenosotrosComponent } from '../shared/pages/sobrenosotros/sobrenosotros.component';
+import { ProductoComponent } from './pages/producto/producto.component';
 //rutas para las categorias
 const routes: Routes = [
 
+  {
+    path: "producto", component: ProductoComponent
+  },
   {
     path: "camperas", component: CamperasComponent
   },
@@ -30,6 +34,7 @@ const routes: Routes = [
     path: "contacto", component: ContactComponent
   },
   { path: "guiadetalles", component: GuiatallesComponent },
+
   { path: "sobrenosotros", component: SobrenosotrosComponent },
 
 ];

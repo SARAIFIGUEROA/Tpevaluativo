@@ -27,7 +27,6 @@ export class CrudService {
 
   private storage = getStorage();
 
-  
   constructor(private database: AngularFirestore) {
     this.productosCollection = database.collection('producto');
   }
@@ -88,7 +87,7 @@ export class CrudService {
           })
 
           .catch(error => {
-            reject("Error al elkiminar la imagen: \n" + error);
+            reject("Error al eliminar la imagen: \n" + error);
           })
       }
       catch (error) {
@@ -123,8 +122,8 @@ export class CrudService {
           return resp;
         })
       return this.respuesta;
-
-    } catch (error) {
+    }
+     catch (error) {
       console.log(error)
       return this.respuesta;
     }

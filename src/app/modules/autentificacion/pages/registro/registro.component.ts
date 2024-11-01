@@ -65,7 +65,7 @@ export class RegistroComponent {
           icon: "success"
         });
         //el metodo navigate nos direcciona a otra vista
-        this.servicioRutas.navigate(['/incio'])
+        this.servicioRutas.navigate(['/inicio'])
   })
       //encapsula un error. captura una falla y la vuelve error cuando la promesa salg mal
       .catch(error => {

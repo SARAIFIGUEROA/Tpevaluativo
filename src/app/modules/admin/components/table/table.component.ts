@@ -1,4 +1,4 @@
-import { Component, numberAttribute } from '@angular/core';
+import { Component } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { CrudService } from '../../services/crud.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -116,10 +116,18 @@ export class TableComponent {
     //enviamos el id del producto para identificarlo en la bd y la url de la imagen va a servir para eliminar desde alamcenamiento storage
     this.serviciocrud.eliminarProducto(this.productoSeleccionado.idproducto, this.productoSeleccionado.imagen,)
       .then(respuesta => {
-        alert("Se ha podido eliminar con éxito.");
+        Swal.fire({
+          title: "Felicidades!",
+          text: "Se pudo eliminar con exito!",
+          icon: "success"
+        });
       })
       .catch(error => {
-        alert("Ha ocurrido un error al eliminar un producto: \n" + error);
+        Swal.fire({
+          title: "Error",
+          text: "Hubo un error al subir producto!  \n" + error,
+          icon: "error"
+        });
       })
 
   }
@@ -159,7 +167,7 @@ export class TableComponent {
     }
 
     if (this.urlimg) {
-      this.serviciocrud.subirImagen(this.nombreurlimg, this.urlimg, "producto")
+      this.serviciocrud.subirImagen(this.nombreurlimg, this.urlimg, "productos")
         .then(resp => {
           this.serviciocrud.obtenerurlimg(resp)
             .then(url => {
@@ -169,9 +177,17 @@ export class TableComponent {
               this.producto.reset(); //vaciamos cdasiolleros del formulrio 
             })
             .catch(error => {
-              alert("hubo un problema al subir la imagen \n" + error);
+              Swal.fire({
+                    title: "Error",
+                    text: "Hubo un error al subir la imagen!  \n" + error,
+                    icon: "error"
+                  });
+              
+          this.producto.reset();
             })
         })
+      }else{
+      this.actualizarproducto(datos);
     }
   }
 
@@ -179,13 +195,20 @@ export class TableComponent {
     //enviamos metodo el id del producto 
     this.serviciocrud.editarProducto(this.productoSeleccionado.idproducto, datos)
       .then(producto => {
-        alert("el producto se ha modificado con exito")
+        Swal.fire({
+          title: "Felicidades!",
+          text: "Se pudo modificar con exito!",
+          icon: "success"
+        });
         this.producto.reset();
       })
 
       .catch(error => {
-        alert("hubo un problema al modificar un nuevo producto \n" + error)
+        Swal.fire({
+          title: "Error",
+          text: "Hubo un error al modificar!  \n" + error,
+          icon: "error"
+        });
       });
-    this.producto.reset();
   }
 }

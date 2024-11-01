@@ -25,7 +25,7 @@ compraVisibole: boolean = false
 //llamamos la variable "productoreciente"
 @Input ()productoReciente:string = '';
 //evenemitter nuevo evento de tipo producto, trae un producto, es un evento que registra 
-@Output() productoagregado= new EventEmitter<Producto>();
+@Output() productoAgregado= new EventEmitter<Producto>();
 
 constructor (public servicioCrud: CrudService){
 
@@ -48,7 +48,7 @@ mostrarVer(info: Producto){
 //recibe informacion respetando la interfaz de producto
 AgregarProducto(info:Producto){
   //llmamos a ouput y emitimos la nueva informacion del producto que agregamos
-  this.productoagregado.emit(info);
+  this.productoAgregado.emit(info);
 //NG IF
   this.compraVisibole = true
 }

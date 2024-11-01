@@ -13,16 +13,20 @@ import { BotasComponent } from './pages/botas/botas.component';
 import { AntiparrasComponent } from './pages/antiparras/antiparras.component';
 //cards
 import { CardComponent } from './components/card/card.component';
-import { CardAntiparrasComponent} from './components/card-antiparras/card-antiparras.component';
-import { ProductoComponent } from './pages/producto/producto.component';
+import { CardAntiparrasComponent } from './components/card-antiparras/card-antiparras.component';
+
 import { CardCamperasComponent } from './components/card-camperas/card-camperas.component';
 import { CardPantalonesComponent } from './components/card-pantalones/card-pantalones.component';
 import { CardBotasComponent } from './components/card-botas/card-botas.component';
 import { CardGuantesComponent } from './components/card-guantes/card-guantes.component';
 import { CardGorrosComponent } from './components/card-gorros/card-gorros.component';
+import { ProductoComponent } from './pages/producto/producto.component';
+import { CarruselComponent } from './components/carrusel/carrusel.component';
+
 
 @NgModule({
   declarations: [
+    ProductoComponent,
     CamperasComponent,
     PantalonesComponent,
     GorrosComponent,
@@ -31,19 +35,20 @@ import { CardGorrosComponent } from './components/card-gorros/card-gorros.compon
     BotasComponent,
     CardComponent,
     CardAntiparrasComponent,
-    ProductoComponent,
     CardCamperasComponent,
     CardPantalonesComponent,
     CardBotasComponent,
     CardGuantesComponent,
-    CardGorrosComponent
+    CardGorrosComponent,
+    CarruselComponent
   ],
   imports: [
     CommonModule,
     ProductosRoutingModule,
     AdminModule,
   ],
-  exports:[
+  exports: [
+    ProductoComponent,
     CamperasComponent,
     PantalonesComponent,
     GorrosComponent,
@@ -52,6 +57,12 @@ import { CardGorrosComponent } from './components/card-gorros/card-gorros.compon
     BotasComponent,
     CardComponent,
     CardAntiparrasComponent,
+    CardCamperasComponent,
+    CardPantalonesComponent,
+    CardBotasComponent,
+    CardGuantesComponent,
+    CardGorrosComponent,
+    CarruselComponent,
   ]
 })
 export class ProductosModule { }
