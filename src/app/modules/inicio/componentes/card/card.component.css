@@ -19,6 +19,69 @@
   /* Para que la imagen no se deforme */
 }
 
+.nombres {
+  height: 30px;
+  text-align: center;
+}
+
+.precios {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+
+.botones {
+  text-align: center;
+  margin-bottom: 0px;
+  padding-bottom: 1px;
+}
+
+p {
+  text-align: center;
+}
+
+.bot {
+  width: 150px;
+  background-color: #669beb;
+
+}
+
+.bot:hover {
+  background-color: #3761a0c9;
+  /* Color de fondo en hover */
+  transform: scale(1.05);
+  /* Agranda el botón en hover */
+  border-color: black;
+}
+
+
+
+
+@media (min-width: 700px) {
+  #botondesplegable {
+    display: none;
+  }
+  .row {
+    align-items: center;
+    display: flex;
+    margin-right: 6px;
+    margin-left: 6px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    justify-content: center;
+  }
+        
+
+  #contenedor {
+    width: 23rem;
+    margin: 16px;
+  }
+
+  #texto {
+    font-size: 20px;
+    margin-left: 15px;
+  }
+}
 
 @media (min-width: 300px) and (max-width: 699px) {
   #contenedor {
@@ -47,6 +110,16 @@
     width: 100%;
 
   }
+  
+  .row {
+  align-items: center;
+  display: flex;
+  margin-right: 6px;
+  margin-left: 6px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  justify-content: center;
+}
 
   #texto {
     font-size: 20px;
@@ -62,65 +135,4 @@
   .botonagregar {
     display: none;
   }
-}
-
-
-@media (min-width: 700px) {
-  #botondesplegable {
-    display: none;
-  }
-
-  #contenedor {
-    width: 23rem;
-    margin: 16px;
-  }
-
-  #texto {
-    font-size: 20px;
-    margin-left: 15px;
-  }
-}
-
-.nombres {
-  height: 30px;
-  text-align: center;
-}
-
-.precios {
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.row {
-  align-items: center;
-  display: flex;
-  margin-right: 6px;
-  margin-left: 6px;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  justify-content: center;
-}
-
-.botones {
-  text-align: center;
-  margin-bottom: 0px;
-  padding-bottom: 1px;
-}
-
-p {
-  text-align: center;
-}
-
-.bot {
-  width: 150px;
-  background-color: #669beb;
-
-}
-
-.bot:hover {
-  background-color: #3761a0c9;
-  /* Color de fondo en hover */
-  transform: scale(1.05);
-  /* Agranda el botón en hover */
-  border-color: black;
 }
