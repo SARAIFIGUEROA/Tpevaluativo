@@ -21,3 +21,17 @@
   .btn-snowpeak:hover {
     background-color:  #9ccfec;
   }
+
+  .whatsapp-button{
+   background-color:  #9ccfec; 
+  }
+  .whatsapp-button:hover{
+    background-color: #547392; 
+  }
+  .icon-img {
+    width: 24px; /* Ajusta el tamaño del icono según sea necesario */
+    height: auto;
+    margin-right: 8px; /* Espacio entre la imagen y el texto */
+    vertical-align: middle; /* Alinea la imagen con el texto */
+  }
+  

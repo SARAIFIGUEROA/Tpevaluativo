@@ -1,39 +1,62 @@
-   
-  <!-- Sección de Contacto -->
-  <section class="contact-section">
-    <div class="container">
-      <h2 class="text-center mb-4">Contacto - SNOWPEAK</h2>
-      <p class="text-center mb-5">¿Tienes alguna consulta sobre nuestros productos de ropa de nieve y accesorios? ¡Envíanos un mensaje!</p>
+<!-- Sección de Contacto -->
+<section class="contact-section">
+  <div class="container">
+    <h2 class="text-center mb-4">Contacto - SNOWPEAK</h2>
+    <p class="text-center mb-5 textofont">¿Tienes alguna consulta sobre nuestros productos de ropa de nieve y
+      accesorios? ¡Envíanos un mensaje!</p>
 
-      <div class="row">
-        <!-- Formulario de Contacto -->
-        <div class="col-md-6">
-          <form>
-            <div class="mb-3">
-              <label for="name" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="name" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" id="email" required>
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Mensaje</label>
-              <textarea class="form-control" id="message" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-snowpeak w-100">Enviar</button>
-          </form>
-        </div>
+    <div class="row">
 
-        <!-- Información de Contacto -->
-        <div class="col-md-6 d-flex flex-column align-items-center">
-          <div class="contact-info mt-4 mt-md-0">
-            <p>📍 Dirección: Av. Montaña 123, Ciudad Nieve</p>
-            <p>📞 Teléfono: +123 456 789</p>
-            <p>✉️ Email: contactosnowpeak.com</p>
-            <p>🕒 Horario: Lunes a Viernes - 9:00 AM a 6:00 PM</p>
+      <!-- Formulario de Contacto -->
+      <div class="col-md-6">
+        <form (ngSubmit)="Enviarmensaje()">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" [(ngModel)]="name" name="name" class="form-control" required>
           </div>
-        </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" [(ngModel)]="email" name="email" class="form-control" id="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="message" [(ngModel)]="message" name="message" class="form-control"
+              rows="4" required></textarea>
+          </div>
+          <!---->
+          <button type="submit" class="btn btn-snowpeak w-100">Enviar</button>
+        </form>
       </div>
+
+      <!-- Información de Contacto -->
+      <div class="col-md-6 d-flex flex-column align-items-center">
+        <div class="contact-info mt-4 mt-md-0">
+          <p>
+            <img src="../../../../../assets/mapa.png" alt="Dirección" class="icon-img">
+            Dirección: Paraguay 1050, Cipolletti
+          </p>
+          <p>
+            <img src="../../../../../assets/telefono.png" alt="Teléfono" class="icon-img">
+            Teléfono: +123 456 789
+          </p>
+          <p>
+            <img src="../../../../../assets/gmail (2).png" alt="Email" class="icon-img">
+            Email: snowpeakgmail.com
+          </p>
+          <p>
+            <img src="../../../../../assets/calendario.png" alt="Horario" class="icon-img">
+            Horario: Lunes a Viernes - 9:00 AM a 6:00 PM
+          </p>
+        </div>
+          <a href="https://wa.me/123456789?text=¡Hola!%20Me%20gustaría%20hacer%20una%20consulta." target="_blank">
+        <button mat-raised-button class="whatsapp-button">
+          Contactar por WhatsApp
+        </button>
+      </a>
+      </div>
+
+
+    
     </div>
-  </section>
+  </div>
+</section>
