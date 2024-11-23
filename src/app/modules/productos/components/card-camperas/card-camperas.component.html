@@ -4,7 +4,7 @@
         <img src="{{producto.imagen}}" class="card-img-top" alt="{{producto.alt}}">
 
         <div class="card-body">
-            <h5 class="card-title">{{producto.imagen}}</h5>
+            <h5 class="card-title">{{producto.nombre}}</h5>
             <p class="card-text">{{producto.precio}}</p>
 
             <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" 
@@ -29,9 +29,11 @@
                     {{productoSeleccionado.descripcion}}
                 </div>
 
+
                 <div class="mb-3">
                     {{productoSeleccionado.precio}}
                 </div>
+
             </div>
 
             <div class="modal-footer">

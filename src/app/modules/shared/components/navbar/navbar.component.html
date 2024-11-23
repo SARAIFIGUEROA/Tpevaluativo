@@ -44,23 +44,12 @@
     </div>
   </mat-menu>
 
-  <!--Buscador
-  <span class="example-spacer"></span>
-
-  <app-buscador></app-buscador>
-<div class="search-input-wrapper" id="menuBarra">
-  <input type="search" class="search-input" placeholder="Buscar" aria-label="Buscar">
-
-  <span class="search-icon"><i class="fas fa-search"></i></span>
-  
-</div>
-<span></span>-->
 <span class="example-spacer"></span>
 <!--Buscador que no se si poner o no
 <app-buscador class="pantallagrande"></app-buscador>-->
 
   <!-- Carrito -->
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink="">
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink="/Carrito">
     <mat-icon>shopping_cart</mat-icon>
   </button>
   <!-- registro e inicio de sesion -->
@@ -78,9 +67,10 @@
   </button>
   
   <mat-menu #menu="matMenu">
-    <button mat-menu-item  routerLink="/contacto">Contacto</button>
-    <button mat-menu-item routerLink="/guiadetalles">Guía de Talles</button>
+    <button mat-menu-item  routerLink="/contact">Contacto</button>
+    <button mat-menu-item routerLink="/guiatalles">Guía de Talles</button>
     <button mat-menu-item routerLink="/sobrenosotros">Sobre Nosotros</button>
+
     <button id="menuAdmin" mat-menu-item routerLink="/admin">Admin</button>
   </mat-menu>
 

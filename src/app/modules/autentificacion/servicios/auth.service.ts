@@ -1,39 +1,45 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-
 // Observables para obtener cambios
 import { Observable } from 'rxjs';
 // Itera colección leyendo información actual
 import { map } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 
 })
+
 export class AuthService {
+  // Propiedad privada para guardar rol de usuario
   private rolUsuario: string | null = null;
+  // Referenciar Auth de Firebase en el servicio y ServicioFirestore
   constructor(
    private auth: AngularFireAuth,
     private serviciofirestore: AngularFirestore,) { }
 
   //funcion para registro
   registro(email: string, password: string) {
+     // retorna el valor que es creado con el método "createEmail..."
     return this.auth.createUserWithEmailAndPassword(email, password);
   }
   //funcion para inicio de sesion
   iniciarsesion(email: string, password: string) {
+      // validar la información del usuario -> saber si existe en la colección
     return this.auth.signInWithEmailAndPassword(email, password);
   }
   //funcion para cerrar sesion 
   cerrarsesion() {
-    //devueklve una promesa vacia
+    //devueklve una promesa vacia, quita el token
     return this.auth.signOut();
   }
+
   // funcion para tomar el uid
   async tomaruid() {
     //nos va a generar una promesa y la constante la va a capturar
     const user = await this.auth.currentUser
-    //si el usuario no respeta la estructura de la inhtrerfaz
+    //si el usuario no respeta la estructura de la intrerfaz
     //si tuvo problemas para el registro -> ejm: Mal internet
     if (user == null) {
       return null
@@ -41,9 +47,11 @@ export class AuthService {
       return user.uid;
     }
   }
-//retornamos del servicio firestore la cllecccion de usuarios, buscamos una refereencia en los email reguistrados y los comprarmaos con los ingrese el usuario al iniciar sesion y los obtiene con el .get, lo vuelve una promesa => da un resultado resuelto o rechazado
+/*retornamos del servicio firestore la cllecccion de usuarios, buscamos una refereencia en los 
+email reguistrados y los comprarmaos con los ingrese el usuario al iniciar sesion y los obtiene con el .get,
+ lo vuelve una promesa => da un resultado resuelto o rechazado*/
   obtenerusuario(email: string) {
-    return this.serviciofirestore.collection('usuarios', ref => ref.where('email', '==', email)).get().toPromise()
+    return this.serviciofirestore.collection('usuarios', ref => ref.where('email', '==', email)).get().toPromise();
   }
   
   // FUNCIÓN PARA OBTENER EL ROL DEL USUARIO

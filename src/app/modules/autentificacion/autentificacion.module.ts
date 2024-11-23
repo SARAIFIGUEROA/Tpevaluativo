@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 
 
 //angular material 
-import { MatSelectModule, matSelectAnimations } from '@angular/material/select';
+import { MatSelectModule} from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -22,14 +22,14 @@ import { MatInputModule } from '@angular/material/input';
   imports: [
     CommonModule,
     AutentificacionRoutingModule,
-FormsModule,
-MatSelectModule,
-MatFormFieldModule,
-MatIconModule,
-MatButtonModule,
-MatInputModule
+    FormsModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule
   ],
-  exports:[
+  exports: [
     RegistroComponent,
     IniciosesionComponent,
     FormsModule,

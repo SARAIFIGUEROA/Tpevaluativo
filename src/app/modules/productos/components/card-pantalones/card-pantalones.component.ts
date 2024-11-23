@@ -12,7 +12,7 @@ export class CardPantalonesComponent {
   //variable 
   coleccionpantalones: Producto[] = [];
   //variable para seleccionar productos especificos
-  productoselecCionado!: Producto
+  productoSeleccionado!: Producto
   //variable para manejar estado del modal
   modalVisible: boolean = false;
 
@@ -47,7 +47,7 @@ export class CardPantalonesComponent {
   mostrarVer(info: Producto){
     this.modalVisible = true;
 
-    this.productoselecCionado = info;
+    this.productoSeleccionado = info;
   }
 
 }

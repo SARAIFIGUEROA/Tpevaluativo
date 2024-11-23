@@ -1,0 +1,66 @@
+/* Contenedor principal */
+.contenido {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en múltiples filas si no caben */
+    justify-content: space-between; /* Distribuye espacio entre las tarjetas */
+    gap: 20px; /* Añade espacio entre las tarjetas */
+}
+
+
+/* Tarjetas */
+.card {
+    width: 100%; /* Ocupa todo el ancho de la tarjeta */
+    height: auto; /* Mantiene las proporciones originales */
+    object-fit: cover; }/* Opciona
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Imágenes */
+.card img {
+    width: 100%; /* Ocupa todo el ancho de la tarjeta */
+    height: auto; /* Mantiene las proporciones originales */
+    object-fit: cover; /* Opcional: recorta para llenar el área disponible */
+}
+
+
+/* Contenido de las tarjetas */
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Botón */
+.card .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .card {
+        flex: 0 1 calc(50% - 20px); /* Dos tarjetas por fila en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 0 1 100%; /* Una tarjeta por fila en pantallas pequeñas */
+    }
+}

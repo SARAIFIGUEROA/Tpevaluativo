@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
-import { CrudService } from 'src/app/modules/admin/services/crud.service';
+import { CrudService } from 'src/app/modules/admin/services/crud.service'; 
 
 @Component({
   selector: 'app-card-antiparras',
@@ -8,47 +8,47 @@ import { CrudService } from 'src/app/modules/admin/services/crud.service';
   styleUrls: ['./card-antiparras.component.css']
 })
 export class CardAntiparrasComponent {
-
+  // Colección de todos los productos de forma local
   coleccionProductos: Producto[] = [];
-  //variable 
-  coleccionBuzos: Producto[] = [];
-  //variable para seleccionar productos especificos
-  productoselecCionado!: Producto
-  //variable para manejar estado del modal
+
+  // Colección de productos de una sola categoría
+  coleccionantiparras: Producto[] = [];
+
+  // Variable para seleccionar productos específicos
+  productoSeleccionado!: Producto;
+
+  // Variable para manejar estado del modal
   modalVisible: boolean = false;
 
+  // Patentamos de forma local el servicio para acceder en él
+  constructor(public servicioCrud: CrudService){}
 
-  //
-  constructor(public servicioCrud: CrudService) { }
-  //inicializa el momento que renderiza el componente
-  ngOninit(): void {
-    //accedemos al metodo "obteerproducto" y nos suscribimos a los cambios
+  // Inicializa al momento que renderiza el componente
+  ngOnInit(): void{
+    // Accedemos a método 'obtenerProducto' y nos subscribimos a los cambios
+    // recibimos notificación ante modificaciones
     this.servicioCrud.obtenerProducto().subscribe(producto => {
       this.coleccionProductos = producto;
 
-      //Mostrara la coleccion de eda categoria hasta el momento
-      this.mostrarProductoBuzos();
+      // Mostrará la colección de esa categoría hasta el momento
+      this.mostrarProductoantiparra();
     })
   }
 
-  //funcion para filtrar los productos de tipo "buzos"
-  mostrarProductoBuzos() {
-    //Iteramos la coleccion de productos con un forEach
+  // Función para filtrar los productos de tipo "camperas"
+  mostrarProductoantiparra(){
+    // Iteramos colección de productos con un 'forEach'
     this.coleccionProductos.forEach(producto => {
-      //si es de tipo "buzos" => condicional
-      if (producto.categoria === "Buzo") {
-        //lo sube / guarda en la coleccion de producto de tipo "Buzo"
-        this.coleccionBuzos.push(producto)
+      // Si es de tipo "camperas" -> condicional
+      if(producto.categoria === "antiparras"){
+        // Lo sube/ guarda en la colección de productos de tipo "camperas"
+        this.coleccionantiparras.push(producto);
       }
     })
   }
- 
-  //funcion mostrarVer se activa con el boton que recibe el parametro de producto si no es de ese tipo no deberia mostrarlo
-  //la informacion que recibnimos siempre va a ser de tipo producto
   mostrarVer(info: Producto){
     this.modalVisible = true;
 
-    this.productoselecCionado = info;
+    this.productoSeleccionado = info;
   }
-
 }

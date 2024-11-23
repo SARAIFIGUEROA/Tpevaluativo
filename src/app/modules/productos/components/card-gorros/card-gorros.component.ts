@@ -12,7 +12,7 @@ export class CardGorrosComponent {
   //variable 
   colecciongorros: Producto[] = [];
   //variable para seleccionar productos especificos
-  productoselecCionado!: Producto
+  productoSeleccionado!: Producto
   //variable para manejar estado del modal
   modalVisible: boolean = false;
 
@@ -26,12 +26,12 @@ export class CardGorrosComponent {
       this.coleccionProductos = producto;
 
       //Mostrara la coleccion de eda categoria hasta el momento
-      this.mostrarProductoGorros();
+      this.mostrarProductogorros();
     })
   }
 
   //funcion para filtrar los productos de tipo "buzos"
-  mostrarProductoGorros() {
+  mostrarProductogorros() {
     //Iteramos la coleccion de productos con un forEach
     this.coleccionProductos.forEach(producto => {
       //si es de tipo "buzos" => condicional
@@ -47,7 +47,7 @@ export class CardGorrosComponent {
   mostrarVer(info: Producto){
     this.modalVisible = true;
 
-    this.productoselecCionado = info;
+    this.productoSeleccionado = info;
   }
 
 }

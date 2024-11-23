@@ -1,9 +1,11 @@
+
+//acedemos a las rutas
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-//acedemos a las rutas
-import { AppRoutingModule } from 'src/app/app-routing.module';
+
 //angular material 
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -16,30 +18,22 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-import { BuscadorComponent } from './pages/buscador/buscador.component';
-import { ContactComponent } from './pages/contact/contact.component';
-import { SobrenosotrosComponent } from './pages/sobrenosotros/sobrenosotros.component';
-import { GuiatallesComponent } from './pages/guiatalles/guiatalles.component';
 
 
 @NgModule({
   declarations: [
     FooterComponent,
     NavbarComponent,
-    BuscadorComponent,
-    ContactComponent,
-    SobrenosotrosComponent,
-    GuiatallesComponent,
   ],
   imports: [
  //modulo que contiene el sobrenosotros.component
     CommonModule,
-    MatIconModule,
+     AppRoutingModule,
 
+    MatIconModule,
     MatToolbarModule,
     MatMenuModule,
     MatListModule,
-    AppRoutingModule,
     MatButtonModule,
     MatIconModule,  // Para íconos
     MatInputModule, // Para campos de entrada
@@ -50,8 +44,6 @@ import { GuiatallesComponent } from './pages/guiatalles/guiatalles.component';
   exports: [
     FooterComponent,
     NavbarComponent,
-    BuscadorComponent,
-
     MatIconModule,
     MatButtonModule,
     MatMenuModule,

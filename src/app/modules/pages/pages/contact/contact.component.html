@@ -9,18 +9,18 @@
 
       <!-- Formulario de Contacto -->
       <div class="col-md-6">
-        <form (ngSubmit)="Enviarmensaje()">
+        <form >
           <div class="mb-3">
             <label for="name" class="form-label">Nombre</label>
-            <input type="text" class="form-control" [(ngModel)]="name" name="name" class="form-control" required>
+            <input type="text" class="form-control"  name="name" class="form-control" required>
           </div>
           <div class="mb-3">
             <label for="email" class="form-label">Correo electrónico</label>
-            <input type="email" [(ngModel)]="email" name="email" class="form-control" id="email" required>
+            <input type="email"  name="email" class="form-control" id="email" required>
           </div>
           <div class="mb-3">
             <label for="message" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="message" [(ngModel)]="message" name="message" class="form-control"
+            <textarea class="form-control" id="message"  name="message" class="form-control"
               rows="4" required></textarea>
           </div>
           <!---->

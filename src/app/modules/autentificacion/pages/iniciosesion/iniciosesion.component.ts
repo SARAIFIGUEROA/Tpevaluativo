@@ -19,46 +19,13 @@ import Swal from 'sweetalert2';
 export class IniciosesionComponent {
   hide = true;
   //mostrar contraseña
-  //definimos coelccion local de usuario
-  /* 
-  public colleccioniniciolocal: Usuario[];
 
-  //coleccion local
-
-  constructor() {
-    this.colleccioniniciolocal = [
-      {
-        uid: '',
-        nombre: 'santiago',
-        apellido: 'lopez',
-        email: 'santi@gmail.com',
-        rol: 'admin',
-        password: '',
-      },
-      {
-        uid: '',
-        nombre: 'juan',
-        apellido: 'ramirez',
-        email: 'juanramirez@gmail.com',
-        rol: 'admin',
-        password: '',
-      },
-      {
-        uid: '',
-        nombre: 'agustiha',
-        apellido: 'gomez',
-        email: 'agusyciro7@gmail.com',
-        rol: 'admin',
-        password: '',
-      }
-    ]
-  }*/
   constructor(
     public servicioAuth: AuthService,
     public servicioFirestore: FirestoreService,
     public servicioRutas: Router,) { }
 
-  //lo que se ingrese 
+  //lo que se ingrese, definimos la interfaz de usuario
   Insesion: Usuario = {
     uid: '',
     nombre: '',
@@ -69,13 +36,6 @@ export class IniciosesionComponent {
   }
 
   async iniciarsesion() {
-    /* const credenciales = {
-       uid: this.Insesion.uid,
-       nombre: this.Insesion.nombre,
-       apellido: this.Insesion.apellido,
-       email: this.Insesion.email,
-       rol: this.Insesion.rol,
-       password: this.Insesion.password,*/
     const credenciales = {
       email: this.Insesion.email,
       password: this.Insesion.password,
@@ -84,7 +44,7 @@ export class IniciosesionComponent {
     try {
       //obtenemos usuario de la bD
       const usuariobd = await this.servicioAuth.obtenerusuario(credenciales.email)
-
+      //condicional verificada que ese usuario de la BD existiera o que sea igual al de nuestra colección
       if (!usuariobd || usuariobd.empty) {
         Swal.fire({
           title: "Hubo un error!",
@@ -94,11 +54,13 @@ export class IniciosesionComponent {
         this.limpiarInputs();
         return;
       }
+      // Vincula al primer documento de la colección "usuarios" que se obtenía desde la BD
       const usuarioDoc = usuariobd.docs[0];
-      //extrae los datos del documentoen forma de objetoy se especifica que va a ser del tipo "usuaro" (se refiere a la interfaz Usuario)
+      /*extrae los datos del documentoen forma de objeto y se especifica que va a ser del tipo
+       "usuaro" (se refiere a la interfaz Usuario)*/
       const usuariodata = usuarioDoc.data() as Usuario
 
-      //encripta la contraseña que el usuario envia meidante "iniciar sesion"
+      //encripta la contraseña que el usuario envia mediante "iniciar sesion"
       const hashedPassword = CryptoJS.SHA256(credenciales.password).toString();
 
       //condicional que compara la contrasewña que acabamos de encriptar conn la que recibimos de "usuariodata"
@@ -119,7 +81,21 @@ export class IniciosesionComponent {
             text: "Se inicio sesion con exito!",
             icon: "success"
           });
-          this.servicioRutas.navigate(['./inicio']);
+          // Almacenamos y enviamos por parametro el rol de los datos de usuario obtenido
+
+          this.servicioAuth.setUsuarioRol(usuariodata.rol);
+
+          if (usuariodata.rol === "admin") {
+            console.log("Inicio de administrador");
+
+            // Si es administrador, redirecciona a la vista de "admin"
+            this.servicioRutas.navigate(['/admin']);
+          } else {
+            console.log("Inicio de visitante");
+
+            // Si es otro tipo de usuario, redirecciona al "inicio"
+            this.servicioRutas.navigate(['/inicio']);
+          }
         })
         .catch(err => {
           Swal.fire({
@@ -129,35 +105,10 @@ export class IniciosesionComponent {
           });
           this.limpiarInputs();
         })
-    }
-    catch (error) {
+    } catch (error) {
       this.limpiarInputs();
     }
   }
-
-  
-  /* for (let i = 0; i < this.colleccioniniciolocal.length; i++) {
-     const usuariolocal = this.colleccioniniciolocal[i];
-     if (usuariolocal.nombre === credenciales.nombre && usuariolocal.apellido === credenciales.apellido && usuariolocal.email === credenciales.email &&
-       usuariolocal.rol === credenciales.rol && usuariolocal.password === credenciales.password) {
-       alert("¡ingresaste con exito! :)");
-       break;
-     }
-     else {
-       alert("l");
-       break;
-     }
-   }*/
-  /*en constante input llamamos atributos y los inicializamos
-  const inputs = {
-    uid: this.Insesion.uid = '',
-    nombre: this.Insesion.nombre = '',
-    apellido: this.Insesion.apellido = '',
-    email: this.Insesion.email = '',
-    rol: this.Insesion.rol = '',
-    password: this.Insesion.password = '',
-  }
-}*/
   limpiarInputs() {
     const inputs = {
       email: this.Insesion.email = '',

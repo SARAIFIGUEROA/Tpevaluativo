@@ -35,13 +35,13 @@ export class CardCamperasComponent {
     })
   }
 
-  // Función para filtrar los productos de tipo "alimentación"
+  // Función para filtrar los productos de tipo "camperas"
   mostrarProductoCampera(){
     // Iteramos colección de productos con un 'forEach'
     this.coleccionProductos.forEach(producto => {
-      // Si es de tipo "alimentación" -> condicional
+      // Si es de tipo "camperas" -> condicional
       if(producto.categoria === "camperas"){
-        // Lo sube/ guarda en la colección de productos de tipo "alimentación"
+        // Lo sube/ guarda en la colección de productos de tipo "camperas"
         this.coleccioncamperas.push(producto);
       }
     })

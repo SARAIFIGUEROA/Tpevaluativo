@@ -1,10 +1,8 @@
 import { CanActivateFn } from '@angular/router';
-
 // Inject -> inyección de servicios
 import { inject } from '@angular/core';
+import { AuthService } from '../modules/autentificacion/servicios/auth.service'; 
 import { Router } from '@angular/router';
-import { AuthService } from '../modules/autentificacion/servicios/auth.service';
-
 // Operadores tipo "observables"
 import { map, switchMap, of, from } from 'rxjs';
 
