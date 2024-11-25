@@ -30,3 +30,8 @@ color:  #ffffff;
 img{
   border-radius: 3%;
 }
+
+table img {
+  max-width: 100px; /* Redimensiona todas las imágenes a un máximo de 100px de ancho */
+  height: auto;
+}

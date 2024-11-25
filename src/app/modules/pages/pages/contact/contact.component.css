@@ -4,7 +4,7 @@
     padding: 50px 20px;
   }
 
-  .contact-section h2 {
+  .contact-section h1 {
     color: #0e3a5d;
   }
 
@@ -35,3 +35,71 @@
     vertical-align: middle; /* Alinea la imagen con el texto */
   }
   
+  .textop{
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+
+
+/* Estilo responsive para pantallas menores a 650px */
+@media (max-width: 650px) {
+
+  .contact-section {
+    padding: 20px 10px; /* Menos espacio en pantallas pequeñas */
+  }
+
+  /* Hacer que el título sea más pequeño en pantallas pequeñas */
+  .contact-section h1 {
+    font-size: 1.5rem;
+    text-align: center; /* Centra el título */
+  }
+
+  /* Asegura que los párrafos sean legibles en pantallas pequeñas */
+  .contact-info p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: center; /* Centra la información de contacto */
+  }
+
+  /* Asegura que el formulario ocupe el 100% del ancho */
+  .contact-section form .form-control {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Botón de envío */
+  .btn-snowpeak {
+    width: 100%; /* Hace que el botón ocupe todo el ancho disponible */
+    font-size: 1.1rem; /* Aumenta el tamaño del texto */
+    padding: 12px; /* Hace que el botón sea más grande en pantallas pequeñas */
+  }
+
+  /* Botón de WhatsApp */
+  .whatsapp-button {
+    width: 100%; /* Hace que el botón ocupe todo el ancho disponible */
+    padding: 12px; /* Hace que el botón sea más grande */
+    font-size: 1.1rem;
+  }
+
+  /* Ajuste de los iconos */
+  .icon-img {
+    width: 20px; /* Reduce el tamaño de los íconos */
+    margin-right: 5px;
+  }
+
+  /* Ajuste en la disposición de las columnas */
+  .col-md-6 {
+    width: 100%; /* Hace que las columnas se apilen en pantallas pequeñas */
+    margin-bottom: 20px;
+  }
+
+  /* Hace que los elementos en la columna de contacto estén centrados */
+  .contact-info {
+    text-align: center; /* Centra la información de contacto */
+  }
+
+  /* Títulos en las secciones */
+  .contact-section .textofont {
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+  }
+}

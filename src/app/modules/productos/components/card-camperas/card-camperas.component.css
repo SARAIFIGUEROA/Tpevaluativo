@@ -1,66 +1,58 @@
-/* Contenedor principal */
-.contenido {
-    display: flex;
-    flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en múltiples filas si no caben */
-    justify-content: space-between; /* Distribuye espacio entre las tarjetas */
-    gap: 20px; /* Añade espacio entre las tarjetas */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Tres columnas de tamaño igual */
+    gap: 30px;
+    /* Espaciado entre cards */
+    margin: 1rem;
+    /* Espaciado alrededor del contenedor */
 }
 
-
-/* Tarjetas */
 .card {
-    width: 100%; /* Ocupa todo el ancho de la tarjeta */
-    height: auto; /* Mantiene las proporciones originales */
-    object-fit: cover; }/* Opciona
+    width: 100%;
+    /* Ocupa el espacio asignado por la grilla */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
+/* Estilo para la imagen de la card */
+.card-img-top {
+    height: 350px;
+    /* Altura fija */
+    width: 100%;
+    /* Ocupa todo el ancho */
+    object-fit: cover;
+    /* Ajusta la imagen sin deformarla */
+    border-bottom: 1px solid #ddd;
+    /* Línea separadora */
+}
+
+/* Cambios al pasar el cursor */
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Ampliación suave */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Mayor sombra */
 }
 
-/* Imágenes */
-.card img {
-    width: 100%; /* Ocupa todo el ancho de la tarjeta */
-    height: auto; /* Mantiene las proporciones originales */
-    object-fit: cover; /* Opcional: recorta para llenar el área disponible */
+/* Estilo para el botón */
+.btn {
+    margin-top: 10px;
 }
 
-
-/* Contenido de las tarjetas */
-.card-body {
-    padding: 15px;
-    text-align: center;
+/* Modal */
+.modal-body img {
+    width: 100%;
+    /* Asegura que la imagen ocupe el ancho del modal */
+    height: auto;
+    /* Mantiene la proporción */
+    margin-bottom: 1rem;
+    /* Espaciado inferior */
 }
 
-.card-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.card-text {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 15px;
-}
-
-/* Botón */
-.card .btn {
-    padding: 10px 20px;
-    font-size: 14px;
-}
-
-/* Diseño responsivo */
-@media (max-width: 768px) {
-    .card {
-        flex: 0 1 calc(50% - 20px); /* Dos tarjetas por fila en pantallas medianas */
-    }
-}
-
-@media (max-width: 480px) {
-    .card {
-        flex: 0 1 100%; /* Una tarjeta por fila en pantallas pequeñas */
-    }
+.vermasboton {
+    background-color: rgb(153, 210, 248);
+    color: white;
+    border-bottom: white;
 }

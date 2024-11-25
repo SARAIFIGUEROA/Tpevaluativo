@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './modules/inicio/pages/inicio/inicio.component';
 import { rutaProtegidaGuard } from './guards/ruta-protegida.guard';
+import { rutaProtegidaCarritoGuard } from './guards/ruta-protegida-carrito.guard';
 
 const routes: Routes = [
   {
@@ -17,9 +18,16 @@ const routes: Routes = [
   {
     path: "", loadChildren: () => import('./modules/shared/shared.module').then(m => m.SharedModule)
   },
+  {path: "", loadChildren:()=> import('./modules/pages/pages.module').then(m=>m.PagesModule)
+  },
   { path:"",loadChildren:()=>import('./modules/admin/admin.module').then(m=>m.AdminModule),
       // Definimos al guardian que proteja la ruta de Admin y que espere un rol de tipo "admin"
       canActivate: [ rutaProtegidaGuard ], data: { role: 'admin' }
+  },
+  {
+    path:"", loadChildren:()=> import('./modules/carrito/carrito.module').then(m => m.CarritoModule),
+    //deifinirle al guardian que proteja la ruta de ADMIN y que espere un rol de tipo ADMIN
+    canActivate:[rutaProtegidaCarritoGuard],data:{role:'usuario'}
   },
   
   

@@ -1,0 +1,58 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Tres columnas de tamaño igual */
+    gap: 30px;
+    /* Espaciado entre cards */
+    margin: 1rem;
+    /* Espaciado alrededor del contenedor */
+}
+
+.card {
+    width: 100%;
+    /* Ocupa el espacio asignado por la grilla */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Estilo para la imagen de la card */
+.card-img-top {
+    height: 300px;
+    /* Altura fija */
+    width: 100%;
+    /* Ocupa todo el ancho */
+    object-fit: cover;
+    /* Ajusta la imagen sin deformarla */
+    border-bottom: 1px solid #ddd;
+    /* Línea separadora */
+}
+
+/* Cambios al pasar el cursor */
+.card:hover {
+    transform: scale(1.05);
+    /* Ampliación suave */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Mayor sombra */
+}
+
+/* Estilo para el botón */
+.btn {
+    margin-top: 10px;
+}
+
+/* Modal */
+.modal-body img {
+    width: 100%;
+    /* Asegura que la imagen ocupe el ancho del modal */
+    height: auto;
+    /* Mantiene la proporción */
+    margin-bottom: 1rem;
+    /* Espaciado inferior */
+}
+
+.vermasboton {
+    background-color: rgb(153, 210, 248);
+    color: white;
+    border-bottom: white;
+}

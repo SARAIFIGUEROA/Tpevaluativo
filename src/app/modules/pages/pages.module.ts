@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ContactComponent } from './pages/contact/contact.component';
 import { SobrenosotrosComponent } from './pages/sobrenosotros/sobrenosotros.component';
 import { GuiatallesComponent } from './pages/guiatalles/guiatalles.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,9 +16,10 @@ import { GuiatallesComponent } from './pages/guiatalles/guiatalles.component';
   ],
 
   imports: [
-    RouterModule,
     CommonModule,
-    PagesRoutingModule
-  ]
+    PagesRoutingModule,
+    SharedModule, // Importa SharedModule para usar Navbar y Footer
+  ],
+
 })
 export class PagesModule { }

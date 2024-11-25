@@ -10,6 +10,8 @@ import { AuthService } from 'src/app/modules/autentificacion/servicios/auth.serv
 })
 export class PedidoComponent {
   coleccionPedidos:Pedido[] = [];
+//el constructor es para las clases que son los objetos, 
+//para angular son los servicios que va a utilizar para funcionar bien
 
   constructor(
     public servicioCarrito:CarritoService,

@@ -55,14 +55,17 @@ email reguistrados y los comprarmaos con los ingrese el usuario al iniciar sesio
   }
   
   // FUNCIÓN PARA OBTENER EL ROL DEL USUARIO
-  obtenerRol(uid: string): Observable<string | null> {
-    /*
-      Accedemos a colección de usuarios, buscando por UID, obteniendo cambios en valores.
+  obtenerRol(uid: string): Observable<string | null > {
+    /*Accedemos a colección de usuarios, buscando por UID, obteniendo cambios en valores.
       Al enviar info. por tubería, "mapeamos" la colección, obtenemos un usuario especifico 
-      y buscamos su atributo "rol", aún si este es "nulo"
-    */
+      y buscamos su atributo "rol", aún si este es "nulo"*/
     return this.serviciofirestore.collection("usuarios").doc(uid).valueChanges()
     .pipe(map((usuario: any) => usuario ? usuario.rol: null));
+    //accedemos a la collecion productos
+  /*snapchanges toma captura del estado de los datos
+  pipe => tuberias que retornan un nuevo arreglo
+  map  "mapas" o recorre esa nueva informacion es un observador, lee, no hacve modificaciones por si solo a menos que se lo pidamos
+  a  resguarda la nueva informacion y la envia como un documento */
   }
 
   // Enviar el rol obtenido -> asignarlo al rol de la variable local

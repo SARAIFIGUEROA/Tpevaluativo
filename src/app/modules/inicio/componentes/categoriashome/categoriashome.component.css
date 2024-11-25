@@ -48,9 +48,9 @@ h1 {
     font-family: "Roboto Condensed", "sans-serif;";
     display: flex;
     justify-content: center;
-
-
 }
+
+
 
 /* no se muestran las cards con categorias en pantalla chicas*/
 @media (min-width: 300px) and (max-width: 700px) {

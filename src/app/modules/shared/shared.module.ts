@@ -3,6 +3,7 @@
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
@@ -20,15 +21,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 
+
 @NgModule({
   declarations: [
     FooterComponent,
     NavbarComponent,
+
   ],
   imports: [
- //modulo que contiene el sobrenosotros.component
+    //modulo que contiene el sobrenosotros.component
     CommonModule,
-     AppRoutingModule,
+    RouterModule,
 
     MatIconModule,
     MatToolbarModule,
@@ -44,6 +47,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   exports: [
     FooterComponent,
     NavbarComponent,
+
     MatIconModule,
     MatButtonModule,
     MatMenuModule,

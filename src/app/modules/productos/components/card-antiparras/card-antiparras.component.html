@@ -1,11 +1,11 @@
 <!-- Card para mostrar TODOS los productos que el admin ingrese a la base de datos -->
+<div class="grid-container">
 <div class="contenido" *ngFor="let producto of coleccionantiparras">
     <div class="card" style="width: 18rem;">
         <img src="{{producto.imagen}}" class="card-img-top" alt="{{producto.alt}}">
 
         <div class="card-body">
             <h5 class="card-title">{{producto.nombre}}</h5>
-            <p class="card-text">{{producto.precio}}</p>
 
             <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" 
             data-bs-target="#verMas" (click)="mostrarVer(producto)">Ver más</button>
@@ -37,9 +37,10 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Agregar al carrito</button>
+                <button type="button" class="btn btn-outline vermasboton" data-bs-dismiss="modal">Agregar al carrito</button>
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
+</div>
 </div>

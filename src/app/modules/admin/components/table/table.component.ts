@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { CrudService } from '../../services/crud.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+//formControl: rastrea el valor, estado, y validación de ese campo específico.
+//formGroup: gestiona el estado y las validaciones de un grupo de controles como una unidad.
+//validators: Ayuda a asegurar que los datos ingresados por el usuario cumplen ciertas reglas antes de enviarlos al servidor.
 //sweet
 import Swal from 'sweetalert2';
 
@@ -38,6 +40,13 @@ export class TableComponent {
   })
 
   constructor(public serviciocrud: CrudService) { }
+   /*Cuando el componente TableComponent se inicializa, se ejecuta ngOnInit().
+Dentro de ngOnInit(), se llama al método obtenerProductos() del servicio CrudService.
+obtenerProductos() devuelve un observable que emite los datos de los productos.
+Se suscribe al observable con subscribe().
+Cuando los datos de los productos son recibidos, se ejecuta la función flecha.
+La lista de productos recibida (almacenada en producto) se asigna a la propiedad coleccionProductos del componente, lo que probablemente actualizará la vista con esos productos.
+*/
   ngOnInit(): void {
     // subscribe -> método de notificación de cambios (observable)
     this.serviciocrud.obtenerProducto().subscribe(producto => {
@@ -59,7 +68,7 @@ export class TableComponent {
         stock: this.producto.value.stock!
       }
 
-
+  // Enviamos nombre y url de la imagen; definimos carpeta de imágenes como "productos"
       await this.serviciocrud.subirImagen(this.nombreurlimg, this.urlimg, "productos")
         .then(resp => {
           //encapsulamos la respuesta 
@@ -73,7 +82,7 @@ export class TableComponent {
                     text: "Se pudo subir con exito!",
                     icon: "success"
                   });
-                  //resetes el formulario y las casillas qeudan vacias
+                  //resetea el formulario y las casillas qeudan vacias
                   this.producto.reset();
                 })
                 .catch(error => {
@@ -97,7 +106,11 @@ export class TableComponent {
     let reader = new FileReader();
     if (archivo != undefined) {
       reader.readAsDataURL(archivo);
-
+ /*
+        Llamamos a método readAsDataURL para leer toda la información recibida
+        Envíamos como parámetro al "archivo" porque será el encargador de tener la 
+        info ingresada por el usuario
+      */
       reader.onloadend = () => {
         let url = reader.result;
         if (url != null) {
@@ -135,18 +148,19 @@ export class TableComponent {
   }
 
   //editar productos
-  //va a recibir un producto seleccionado por el usuario, va a llamar al formularioi de producto y va a tomar uno por uno los atributos del formulario
+  /*va a recibir un producto seleccionado por el usuario, va a llamar al formularioi de producto
+   y va a tomar uno por uno los atributos del formulario*/
   Mostrareditar(productoSeleccionado: Producto) {
     this.productoSeleccionado = productoSeleccionado;
 
-    //todos los vlaores del producto seleccionado los va a autocompletar en el formulario del modal (menos el ID)
+    /*todos los vlaores del producto seleccionado los va a autocompletar en el 
+    formulario del modal (menos el ID)*/
 
     this.producto.setValue({
       nombre: productoSeleccionado.nombre,
       precio: productoSeleccionado.precio,
       descripcion: productoSeleccionado.descripcion,
       categoria: productoSeleccionado.categoria,
-      //  imagen: productoSeleccionado.imagen,
       alt: productoSeleccionado.alt,
       stock: productoSeleccionado.stock,
     })
@@ -169,7 +183,7 @@ export class TableComponent {
       stock: this.producto.value.stock!
 
     }
-
+ //verificamos si el usuario ingresa o no una nueva imagen
     if (this.urlimg) {
       this.serviciocrud.subirImagen(this.nombreurlimg, this.urlimg, "productos")
         .then(resp => {
@@ -190,13 +204,17 @@ export class TableComponent {
           this.producto.reset();
             })
         })
+       /* actulaizamos formulario con los datos recibidos del usuario, pero sin
+      modificar la imagen ya existente en Firestore y en Storage */
+
       }else{
       this.actualizarproducto(datos);
     }
   }
 
+//  la informacion ya existente de los productos
   actualizarproducto(datos: Producto) {
-    //enviamos metodo el id del producto 
+    //enviamos metodo el id del producto seleccionado y los datos actualizados 
     this.serviciocrud.editarProducto(this.productoSeleccionado.idproducto, datos)
       .then(producto => {
         Swal.fire({

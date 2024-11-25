@@ -33,6 +33,7 @@ export class CrudService {
 
   // crear,
   crearproducto(producto: Producto, url: string) {
+    //promesa: es un tipo de funcion, que te va a mostrar un resultado, ya sea aceptado o rechazado
     return new Promise(async (resolve, reject) => {
       try {
         //creamos numero identificativo para el producto en la base de datos
@@ -44,7 +45,8 @@ export class CrudService {
 
         //accede a la collecion productos
         const resultado = await this.productosCollection.doc(idproducto).set(producto);
-
+        //.doc = ingresa al documento idProducto
+        //.set = guarda o actualiza un documento en Firestore con los datos que se pasan como argumento.
         resolve(resultado);
       } catch (error) {
         reject(error);
@@ -54,14 +56,14 @@ export class CrudService {
 
 
   //funcion obtener 
-  //accedemos a la collecion productos
+  
+  obtenerProducto() {
+    return this.productosCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())))
+  }//accedemos a la collecion productos
   /*snapchanges toma captura del estado de los datos
   pipe => tuberias que retornan un nuevo arreglo
   map  "mapas" o recorre esa nueva informacion es un observador, lee, no hacve modificaciones por si solo a menos que se lo pidamos
   a  resguarda la nueva informacion y la envia como un documento */
-  obtenerProducto() {
-    return this.productosCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())))
-  }
 
 
   //editar //id para saber cual es el producto que quiero eliminar
@@ -76,6 +78,7 @@ export class CrudService {
     return new Promise((resolve, reject) => {
       //encapsula todo lo que hace la promesa
       try {
+            // Obtiene la referencia desde el almacenamiento de Storag
         const storage = getStorage();
         const referenciadeimg = ref(storage, imagenUrl);
         deleteObject(referenciadeimg)
@@ -123,7 +126,7 @@ export class CrudService {
         })
       return this.respuesta;
     }
-     catch (error) {
+    catch (error) {
       console.log(error)
       return this.respuesta;
     }

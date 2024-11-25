@@ -1,30 +1,81 @@
+/* Estilos generales del footer */
 .footer {
-    background-color: #547392;
-  }
-  
-  .footer h5 {
-    margin-bottom: 1rem;
-  }
-  
-  .footer a {
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s ease;
-  }
-  
-  .footer a:hover {
-    color: #111111;
-    cursor: pointer;
-  }
-  
-  .footer i {
-    margin-right: 8px;
-  }
-  
-  h3{
-    color: white;
+  background-color: #547392;
+  color: white;
+  padding: 20px 0;
+}
+
+.footer h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #d7e3f3; 
+  text-align: center; /* Alinea los títulos */
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center; /* Centra el contenido de las listas */
+}
+
+.footer ul li {
+  margin: 10px 0;
+}
+
+.footer a {
+  color: #ffffff; 
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #6586a5; 
+}
+
+.footer .fab,
+.footer .fas,
+.footer svg {
+  margin-right: 8px;
+}
+
+/* Alinear los textos en el centro */
+.footer .text-center {
+  text-align: center;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+  .footer {
+    text-align: center;
   }
 
-  li{
-    color: #547392;
+  .footer .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
+  .footer .col-md-4 {
+    margin-bottom: 20px;
+  }
+
+  .footer ul li {
+    margin: 5px 0;
+  }
+}
+
+/* Estilo adicional para mejorar los botones de redes sociales */
+.footer ul li a i,
+.footer ul li a svg {
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+.footer ul li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}

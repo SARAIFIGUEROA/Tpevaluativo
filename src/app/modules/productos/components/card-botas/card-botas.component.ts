@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { Producto } from 'src/app/models/producto';
-import { CrudService } from 'src/app/modules/admin/services/crud.service'; 
+import { CrudService } from 'src/app/modules/admin/services/crud.service';
+import { CarritoService } from 'src/app/modules/carrito/services/carrito.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-card-botas',
@@ -19,9 +21,18 @@ export class CardBotasComponent {
 
   // Variable para manejar estado del modal
   modalVisible: boolean = false;
+  //directivas para comunicarse con el componente padre
+@Input()productoReciente :string = '';
+
+//@output sera definido como un nuevo evento
+@Output()productoAgregado = new EventEmitter<Producto>()
+
+stock: number=0;
 
   // Patentamos de forma local el servicio para acceder en él
-  constructor(public servicioCrud: CrudService){}
+  constructor(public servicioCrud: CrudService,
+    public servicioCarrito: CarritoService //Aca el servicio carrito llama a carritoservice
+  ){}
 
   // Inicializa al momento que renderiza el componente
   ngOnInit(): void{
@@ -51,5 +62,19 @@ export class CardBotasComponent {
     this.modalVisible = true;
 
     this.productoSeleccionado = info;
+  }
+  agregarProducto(info:Producto){
+    const stockDeseado = Math.trunc(this.stock);
+
+    if(stockDeseado<=0 || stockDeseado>info.stock){
+      Swal.fire({
+        title: "El stock ingresado no es válido",
+        text: "Ingrese un valor valido",
+        icon: "error"
+      });
+    }else{
+      this.servicioCarrito.crearPedido(info,stockDeseado);
+
+    }
   }
 }

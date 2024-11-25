@@ -19,7 +19,7 @@
   }
 
   .card {
-    background-color: #f0f9ff;
+    background-color: #c0e1f8;
     border: 2px solid #c6e2ef;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
@@ -40,3 +40,9 @@
     font-weight: bold;
     font-size: 1.25rem;
   }
+  
+  .textop{
+      font-family: "Roboto Condensed", sans-serif;
+  }
+
+

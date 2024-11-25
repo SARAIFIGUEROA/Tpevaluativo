@@ -1,7 +1,7 @@
 <!-- Sección de Contacto -->
 <section class="contact-section">
   <div class="container">
-    <h2 class="text-center mb-4">Contacto - SNOWPEAK</h2>
+    <h1 class="text-center mb-4 textop">Contacto - SNOWPEAK</h1>
     <p class="text-center mb-5 textofont">¿Tienes alguna consulta sobre nuestros productos de ropa de nieve y
       accesorios? ¡Envíanos un mensaje!</p>
 
@@ -9,22 +9,23 @@
 
       <!-- Formulario de Contacto -->
       <div class="col-md-6">
-        <form >
+        <form action="https://formsubmit.co/saraifigueroa012@gmail.com" method="POST">
           <div class="mb-3">
-            <label for="name" class="form-label">Nombre</label>
-            <input type="text" class="form-control"  name="name" class="form-control" required>
+            <label for="name" >Nombre</label>
+            <input type="text" id="name" name="name" class="form-control">
           </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Correo electrónico</label>
-            <input type="email"  name="email" class="form-control" id="email" required>
+            <label for="email" >Correo electrónico</label>
+            <input type="email"  name="email"  id="email"class="form-control">
           </div>
           <div class="mb-3">
-            <label for="message" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="message"  name="message" class="form-control"
-              rows="4" required></textarea>
+            <label for="coments">Mensaje</label>
+            <textarea class="form-control"  name="coments" id="coments"  cols="30" rows="5"></textarea>
           </div>
           <!---->
-          <button type="submit" class="btn btn-snowpeak w-100">Enviar</button>
+          <input type="submit" class="btn btn-snowpeak w-100" value="Enviar">
+
+          <input type="hidden" name="_next" value="">
         </form>
       </div>
 

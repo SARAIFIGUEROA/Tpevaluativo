@@ -50,7 +50,7 @@ export class CarritoService {
       if (this.uid === null) {
         console.error('No se obtuvo el UID. Intente inicar sesion');
 
-        this.servicioRutas.navigate(['/inicio-sesion']);
+        this.servicioRutas.navigate(['/iniciosesion']);
       } else {
         this.pedidosColeccion = this.servicioFirestore.collection(`usuarios/${this.uid}/pedido`);
       }

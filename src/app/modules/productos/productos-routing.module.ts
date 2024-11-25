@@ -8,13 +8,9 @@ import { BotasComponent } from './pages/botas/botas.component';
 import { AntiparrasComponent } from './pages/antiparras/antiparras.component';
 import { ProductoComponent } from './pages/producto/producto.component';
 //
-import { ContactComponent } from '../pages/pages/contact/contact.component';
-import { GuiatallesComponent } from '../pages/pages/guiatalles/guiatalles.component';
-import { SobrenosotrosComponent } from '../pages/pages/sobrenosotros/sobrenosotros.component';
 
 //rutas para las categorias
 const routes: Routes = [
-
   {
     path: "producto", component: ProductoComponent
   },
@@ -31,13 +27,6 @@ const routes: Routes = [
   { path: "gorros", component: GorrosComponent },
 
   { path: "botas", component: BotasComponent },
-//ruta
-  {
-    path: "contacto", component: ContactComponent
-  },
-  { path: "guiadetalles", component: GuiatallesComponent },
-
-  { path: "sobrenosotros", component: SobrenosotrosComponent },
 
 ];
 

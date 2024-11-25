@@ -6,7 +6,6 @@ import { AuthService } from '../../servicios/auth.service';
 import { FirestoreService } from 'src/app/modules/shared/services/firestore.service';
 //importamos componentes de rutas de angular
 import { Router } from '@angular/router';
-import { throwToolbarMixedModesError } from '@angular/material/toolbar';
 
 //crypton
 
@@ -28,7 +27,7 @@ export class RegistroComponent {
     nombre: '',
     apellido: '',
     email: '',
-    rol: 'usuario',
+    rol: 'usuario',  //-> todos los usuarios al registrarse seran usuario
     password: '',
   }
   //Un arreglo de tipo usuario, significa que solo puede resibir valores que esten declarados en la intrerfaz usuario y de tipo array
