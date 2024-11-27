@@ -41,18 +41,53 @@
     margin-top: 10px;
 }
 
-/* Modal */
+/* Modal Body - Estructura general */
+.modal-body {
+    display: flex;             /* Activa Flexbox */
+    flex-direction: column;    /* Apila los elementos verticalmente */
+    align-items: center;       /* Centra los elementos horizontalmente */
+    text-align: left;          /* El texto se alinea a la izquierda por defecto */
+    border-radius: 8px;
+}
+
+/* Nombre del producto */
+.modal-title {
+    text-align: center;        /* Centra el nombre del producto */
+    margin-bottom: 1rem;       /* Espaciado inferior */
+}
+
+/* Imagen */
 .modal-body img {
-    width: 100%;
-    /* Asegura que la imagen ocupe el ancho del modal */
-    height: auto;
-    /* Mantiene la proporción */
-    margin-bottom: 1rem;
-    /* Espaciado inferior */
+    width: 350px;              /* Ajusta el ancho de la imagen */
+    height: auto;              /* Mantiene la proporción */
+    margin-bottom: 1rem;       /* Espaciado inferior */
+    border-radius: 8px;
+}
+
+/* Descripción alineada a la izquierda */
+.modal-body .descripcion-precio {
+    text-align: left;          /* Alinea la descripción a la izquierda */
+    margin-bottom: 1rem;       /* Espaciado inferior */
+    width: 100%;               /* Asegura que ocupe todo el ancho disponible */
+}
+
+/* Botones */
+.modal-footer {
+    display: flex;             /* Activa Flexbox */
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    width: 100%;               /* Ocupa todo el ancho del modal */
+    gap: 10px;                 /* Espaciado entre los botones */
+}
+.input{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 25%;
 }
 
 .vermasboton {
     background-color: rgb(153, 210, 248);
-    color: white;
+    color: rgb(0, 0, 0);
     border-bottom: white;
 }

@@ -4,7 +4,7 @@ import { PedidoComponent } from './components/pedido/pedido.component';
 
 
 const routes: Routes = [
- { path:'carrito',component:PedidoComponent},
+ { path:'carrito', component:PedidoComponent},
 ];
 
 @NgModule({

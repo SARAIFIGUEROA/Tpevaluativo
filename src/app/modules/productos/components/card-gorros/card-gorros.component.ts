@@ -70,7 +70,10 @@ stock: number=0;
       });
     }else{
       this.servicioCarrito.crearPedido(info,stockDeseado);
-
+      Swal.fire({
+        title: "Se añadio el producto con exito",
+        icon: "success"
+      });
     }
   }
 }

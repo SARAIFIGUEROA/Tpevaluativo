@@ -11,93 +11,101 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class CarritoService {
+//modelo que va a recibir los datos del pedido que se subira a la base de datos
+pedido: Pedido = {
+  idPedido: '',
 
-  //Creamos el modelo que va a recibir los datos del pedido que se subira a la base de datos
-  pedido:Pedido ={
-    idPedido:'',
-    producto: {
-      idproducto:'',
-      nombre:'',
-      precio:0,
-      descripcion:'',
-      categoria:'',
-      imagen:'',
-      alt:'',
-      stock:0
-    },
-    cantidad:0,
-    total:0
-  }
+  producto: {
+    idproducto: '',
+    nombre: '',
+    descripcion: '',
+    precio:0,
+    stock:0 ,
+    imagen: '',
+    alt: '',
+    categoria: '',
+    
+  },
+  cantidad: 0,
+  total: 0
+}
 
-  private pedidosColeccion: AngularFirestoreCollection<Pedido>
+private pedidosColeccion : AngularFirestoreCollection<Pedido>
+private uid: string | null = null;
 
-  private uid:string | null = null;
+constructor(
+  private servicioAuth: AuthService,
+  private servicioFirestore: AngularFirestore,
+  public servicioRutas: Router,
 
-  constructor(
-    private servicioAuth:AuthService,
-    private servicioFirestore:AngularFirestore,
-    public servicioRutas:Router
-  ) {
-    //Creamos la subcoleccion dentro de la coleccion de usuarios y le damos ese valor a pedidosColeccion
-    this.pedidosColeccion = this.servicioFirestore.collection(`usuarios/${this.uid}/pedido`);
-  }
+) {
+  this.pedidosColeccion = this.servicioFirestore.collection(`usuarios/${this.uid}/pedido`)
+}
 
-  //Inicializa el carrito y la subcoleccion de pedidos
-  iniciarCarrito(){
-    this.servicioAuth.tomaruid ().then(uid => {
-      this.uid = uid
 
-      if (this.uid === null) {
-        console.error('No se obtuvo el UID. Intente inicar sesion');
+//inicializa el carrito y la subcoleccion de pedidos
+iniciarCarrito(){
+  this.servicioAuth.tomaruid().then(uid => {
+    this.uid = uid
 
-        this.servicioRutas.navigate(['/iniciosesion']);
-      } else {
-        this.pedidosColeccion = this.servicioFirestore.collection(`usuarios/${this.uid}/pedido`);
-      }
-    })
-  }
+    if(this.uid===null){
+      console.error('no se obtuvo el UID. Intente iniciar sesion');
+      this.servicioRutas.navigate(['/iniciosesion']);
 
-  //Obtiene los productos que ya esten dentro del pedido
-  obtenerCarrito(){
-    return this.pedidosColeccion.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())));
-  }
+    } else {
 
-  crearPedido(producto:Producto , stock:number){
-    try {
-      const idPedido = this.servicioFirestore.createId();
+      this.pedidosColeccion= this.servicioFirestore.collection(`usuarios/${this.uid}/pedido`)
 
-      this.pedido.idPedido = idPedido;
-      this.pedido.producto = producto;
-      this.pedido.cantidad = stock;
-      this.pedido.total = producto.precio*stock;
-
-      this.pedidosColeccion.doc(idPedido).set(this.pedido);
-
-      this.obtenerCarrito();
-    } catch (error) {
-      Swal.fire({
-        title:'¡Oh no!',
-        text:'Ha ocurrido un error al subir su producto \n'+error,
-        icon:'error'
-      });
     }
-  }
 
-  borrarPedido(pedido:Pedido){
-    try {
-      this.pedidosColeccion.doc(pedido.idPedido).delete();
+  })
+}
 
-      Swal.fire({
-        title:`${pedido.producto.nombre} ha sido borrado`,
-        text:'Ha borrado su producto con exito',
-        icon:'info'
-      });
-    } catch (error) {
-      Swal.fire({
-        title:'¡Oh no!',
-        text:'Ha ocurrido un error: \n'+error,
-        icon:'error'
-      });
-    }
-  }
+
+//obtiene los productos que ya esten dentro del pedido
+obtenerCarrito(){
+return this.pedidosColeccion.snapshotChanges().pipe(map(action=>action.map(a=>a.payload.doc.data())))
+}
+
+
+crearPedido(producto:Producto,stock:number){
+try{
+  const idPedido= this.servicioFirestore.createId();
+
+  this.pedido.idPedido= idPedido;
+  this.pedido.producto=producto;
+  this.pedido.cantidad= stock;
+  this.pedido.total = producto.precio*stock;
+
+
+  this.pedidosColeccion.doc(idPedido).set(this.pedido);
+}
+catch(error){
+  Swal.fire({
+    title:'¡Oh no!',
+    text:'Ha ocurrido un error al subir su producto \n'+ error,
+    icon:'error'
+  });
+}
+}
+
+borrarPedido(pedido:Pedido){
+try{
+  this.pedidosColeccion.doc(pedido.idPedido).delete();
+
+  Swal.fire({
+    title: `¡${pedido.producto.nombre} se ha borrado con éxito!`,
+    icon:'info'
+  });
+}
+catch(error){
+  Swal.fire({
+    title:'¡Oh no!',
+    text:'Ha ocurrido un error al borrar su pedido: \n'+ error,
+    icon:'error'
+  });
+
+}
+}
+
 }
